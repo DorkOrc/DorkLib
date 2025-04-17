@@ -39,6 +39,11 @@ Flattens the text component into a single string.
 
 ## NBT Functions
 
+### do:nbt/type
+Gets the data type of the input. The options are `byte`, `short`, `int`, `long`, `float`, `double`, `string`, `compound`, `list`, `byte_array`, `int_array`, and `long_array`.
+> `(input: Any) -> str`
+- `storage do:io input` may be any value.
+
 ### do:nbt/read_snbt
 Converts a string containing SNBT into the NBT object that it represents.
 > `(input: str) -> Any`
