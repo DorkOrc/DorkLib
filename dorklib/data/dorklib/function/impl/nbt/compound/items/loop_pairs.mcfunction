@@ -20,6 +20,6 @@ function dorklib:impl/nbt/compound/items/slice_out_key with storage dorklib:main
 
 execute if score #string_key dorklib.var matches 0 run function dorklib:impl/nbt/compound/items/append_item_unquoted_key with storage dorklib:main functions."do:nbt/compound/items"
 execute if score #string_key dorklib.var matches 1 run function dorklib:impl/nbt/compound/items/append_item_quoted_key with storage dorklib:main functions."do:nbt/compound/items"
+scoreboard players remove #remaining_keys dorklib.var 1
 
-execute store result score #remaining_keys dorklib.var run data get storage dorklib:main functions."do:nbt/compound/items".value
 execute if score #remaining_keys dorklib.var matches 1.. run function dorklib:impl/nbt/compound/items/loop_pairs
