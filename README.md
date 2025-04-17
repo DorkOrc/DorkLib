@@ -39,6 +39,16 @@ Flattens the text component into a single string.
 
 ## NBT Functions
 
+### do:nbt/read_snbt
+Converts a string containing SNBT into the NBT object that it represents.
+> `(input: str) -> Any`
+- `storage do:io input` should be a string containing SNBT.
+
+### do:nbt/write_snbt
+Converts any NBT object into a string containing its SNBT representation. This is different from `/data modify ... <op> string ...` as it wraps strings in quote marks and accepts compound, list, and array types. 
+> `(input: Any) -> str`
+- `storage do:io input` may be any value.
+
 ### do:nbt/compound/items
 Gets a list of the key-value pairs of the compound. Each element of the output list is a list with two elements. The first element is the key and the second element is the value.
 > `(input: dict) -> list[tuple[str, Any], ...]`
