@@ -50,8 +50,8 @@ Converts any NBT object into a string containing its SNBT representation. This i
 - `storage do:io input` may be any value.
 
 ### do:nbt/compound/items
-Gets a list of the key-value pairs of the compound. Each element of the output list is a list with two elements. The first element is the key and the second element is the value.
-> `(input: dict) -> list[tuple[str, Any], ...]`
+Gets a list of the key-value pairs of the compound. Each element of the output list is a compounds with a "key" and "value" child. They, respectively, store the key and the value associated with that key in the input compound.
+> `(input: dict) -> list[dict, ...]`
 - `storage do:io input` should be a compound.
 
 ### do:nbt/compound/keys
