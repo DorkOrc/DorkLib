@@ -54,6 +54,12 @@ Converts any NBT object into a string containing its SNBT representation. This i
 > `(input: Any) -> str`
 - `storage do:io input` may be any value.
 
+### do:nbt/write_json
+Converts any NBT object into a string containing its JSON representation.
+> `(input: Any) -> str`
+- `storage do:io input` may be any value.
+- `storage do:io args.byte_as_boolean` can optionally be a boolean. If true, 0b and 1b will be written as false and true respectively.
+
 ### do:nbt/compound/items
 Gets a list of the key-value pairs of the compound. Each element of the output list is a compounds with a "key" and "value" child. They, respectively, store the key and the value associated with that key in the input compound.
 > `(input: dict) -> list[dict, ...]`
