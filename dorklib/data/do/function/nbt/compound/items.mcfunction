@@ -1,5 +1,5 @@
-# Get the items of a compound. Returns a list of lists where each sublist contains a string (the key) and an arbitrary object (the value associated with that key in the compound). 
-# dict -> list[tuple[str, Any], ...]
+# Get the items of a compound. Returns a list of compounds each with a "key" and "value" child storing, respectively, the key and the value associated with that key in the input compound.
+# dict -> list[{"key": str, "value": Any}, ...]
 
 execute unless function dorklib:io/init run return fail
 

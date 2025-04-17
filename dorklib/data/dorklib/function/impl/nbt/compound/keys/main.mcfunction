@@ -6,7 +6,7 @@ function dorklib:impl/nbt/compound/items/main
 
 # output only the keys
 data modify storage dorklib:main functions."do:nbt/compound/keys".keys set value []
-data modify storage dorklib:main functions."do:nbt/compound/keys".keys append from storage do:io output[][0]
+data modify storage dorklib:main functions."do:nbt/compound/keys".keys append from storage do:io output[].key
 data modify storage do:io output set from storage dorklib:main functions."do:nbt/compound/keys".keys
 
 return 1
