@@ -20,7 +20,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 ## String Functions
 
 <details>
-  <summary><h3>Concatenate Strings - `do:str/join`</h3></summary>
+  <summary><h3>Concatenate Strings - <code>do:str/join</code></h3></summary>
 
   Joins a list of strings together, returning a single string.
   > `(input: list[str, ...], separator: str = "") -> str`
@@ -29,7 +29,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Split Strings - `do:str/split`</h3></summary>
+  <summary><h3>Split Strings - <code>do:str/split</code></h3></summary>
 
   Splits a strings by some separator.
   > `(input: str, separator: str, max_splits: int = 2147483647) -> list[str, ...]`
@@ -39,7 +39,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Escape Double-Quotes - `do:str/escape/double_quote`</h3></summary>
+  <summary><h3>Escape Double-Quotes - <code>do:str/escape/double_quote</code></h3></summary>
 
   Inserts backslash characters before each `\` and `"` character. Also replaces several special characters with their respective escape sequences (e.g. `\n`).
   > `(input: str) -> str`
@@ -47,7 +47,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Escape Single-Quotes - `do:str/escape/single_quote`</h3></summary>
+  <summary><h3>Escape Single-Quotes - <code>do:str/escape/single_quote</code></h3></summary>
 
   Inserts backslash characters before each `\` and `'` character. Also replaces several special characters with their respective escape sequences (e.g. `\n`).
   > `(input: str) -> str`
@@ -57,7 +57,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 ## Text Component Functions
 
 <details>
-  <summary><h3>Resolve Text Component - `do:text/resolve`</h3></summary>
+  <summary><h3>Resolve Text Component - <code>do:text/resolve</code></h3></summary>
 
   Resolves the text component. Uses the entity context of the executor. If no entity is executing, a temporary marker will be used.
   > `(input: str|compound|list) -> str|compound`
@@ -65,7 +65,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Flatten Text Component - `do:text/flatten`</h3></summary>
+  <summary><h3>Flatten Text Component - <code>do:text/flatten</code></h3></summary>
 
   Flattens the text component into a single string.
   > `(input: str|compound|list) -> str`
@@ -75,7 +75,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 ## NBT Functions
 
 <details>
-  <summary><h3>Get Data Type - `do:nbt/type`</h3></summary>
+  <summary><h3>Get Data Type - <code>do:nbt/type</code></h3></summary>
 
   Gets the data type of the input. The options are `byte`, `short`, `int`, `long`, `float`, `double`, `string`, `compound`, `list`, `byte_array`, `int_array`, and `long_array`.
   > `(input: Any) -> str`
@@ -83,7 +83,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Read SNBT - `do:nbt/read_snbt`</h3></summary>
+  <summary><h3>Read SNBT - <code>do:nbt/read_snbt</code></h3></summary>
 
   Converts a string containing SNBT into the NBT object that it represents.
   > `(input: str) -> Any`
@@ -91,7 +91,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Dump NBT as SNBT - `do:nbt/write_snbt`</h3></summary>
+  <summary><h3>Dump NBT as SNBT - <code>do:nbt/write_snbt</code></h3></summary>
 
   Converts any NBT object into a string containing its SNBT representation. This is different from `/data modify ... <op> string ...` as it wraps strings in quote marks and accepts compound, list, and array types. 
   > `(input: Any) -> str`
@@ -99,7 +99,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Dump NBT as JSON - `do:nbt/write_json`</h3></summary>
+  <summary><h3>Dump NBT as JSON - <code>do:nbt/write_json</code></h3></summary>
 
   Converts any NBT object into a string containing its JSON representation.
   > `(input: Any) -> str`
@@ -108,7 +108,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Get the Items of a Compound - `do:nbt/compound/items`</h3></summary>
+  <summary><h3>Get the Items of a Compound - <code>do:nbt/compound/items</code></h3></summary>
 
   Gets a list of the key-value pairs of the compound. Each element of the output list is a compounds with a "key" and "value" child. They, respectively, store the key and the value associated with that key in the input compound.
   > `(input: compound) -> list[compound{key: str, value: Any}, ...]`
@@ -116,7 +116,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Get the Keys of a Compound - `do:nbt/compound/keys`</h3></summary>
+  <summary><h3>Get the Keys of a Compound - <code>do:nbt/compound/keys</code></h3></summary>
 
   Gets a list of the keys of the compound.
   > `(input: compound) -> list[str, ...]`
@@ -124,7 +124,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Get the Values of a Compound - `do:nbt/compound/values`</h3></summary>
+  <summary><h3>Get the Values of a Compound - <code>do:nbt/compound/values</code></h3></summary>
 
   Gets a list of the values associated with each key of the compound.
   > `(input: compound) -> list[Any, ...]`
@@ -132,7 +132,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Get the Value of a Key in a Compound - `do:nbt/compound/get`</h3></summary>
+  <summary><h3>Get the Value of a Key in a Compound - <code>do:nbt/compound/get</code></h3></summary>
 
   Gets the value associated with the "key" argument. If the key is not present in the compound, the "default" argument is used. If no default is provided, the function fails.
   > `(input: compound, key: str, default: Any = None) -> Any`
