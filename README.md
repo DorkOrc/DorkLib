@@ -1,5 +1,22 @@
 # DorkLib
 
+## Overview
+API functions are all functions under the `do` namespace, for example `do:str/join`.
+
+Data I/O functions are handled by writing to `storage do:io input` (and optionally `storage do:io args`) then running the function, then reading from `storage do:io output`. If no `input` is given but there is still some `output` present, that value will be treated as the input, allowing for stringing together multiple functions without having to manually copy the value back to the `input` from the `output`.
+
+Some functions allow for, or require, some additional arguments. These additional arguments can be written to `storage do:io args` before running the function, or they can be inlined by running the function with a `.` postfixed to the function ID and the arguments specified as the `args` variable of a macro function. For example, you could run
+```
+data modify storage do:io args set value {separator:"_"}
+function do:str/split
+```
+Or you can inline it as
+```
+function do:str/split. {args:{separator:"_"}}
+```
+
+Once a function is ran, the `input` and `args` fields will be deleted, leaving only the `output`.
+
 ## String Functions
 
 ### do:str/join
