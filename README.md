@@ -54,6 +54,14 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io input` is a string.
 </details>
 
+<details>
+  <summary><h3>Get Characters (respecting surrogate pairs) - <code>do:str/chars</code></h3></summary>
+
+  Gets a list of the characters in the string **without** splitting apart surrogate pairs.
+  > `(input: str) -> list[chr, ...]`
+  - `storage do:io input` is a string.
+</details>
+
 ## Text Component Functions
 
 <details>
