@@ -63,6 +63,22 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
+  <summary><h3>Convert to Lowercase - <code>do:str/lower</code></h3></summary>
+
+  Converts each character in the string to its lowercase counterpart, if possible. Uses [this mapping](https://www.ibm.com/docs/en/i/7.3.0?topic=tables-unicode-uppercase-lowercase-conversion-mapping-table) of unicode characters.
+  > `(input: str) -> str`
+  - `storage do:io input` is a string.
+</details>
+
+<details>
+  <summary><h3>Convert to Uppercase - <code>do:str/upper</code></h3></summary>
+
+  Converts each character in the string to its uppercase counterpart, if possible. Uses [this mapping](https://www.ibm.com/docs/en/i/7.3.0?topic=tables-unicode-lowercase-uppercase-conversion-mapping-table) of unicode characters.
+  > `(input: str) -> str`
+  - `storage do:io input` is a string.
+</details>
+
+<details>
   <summary><h3>Convert to Alphanumeric - <code>do:str/alphanumeric</code></h3></summary>
 
   Converts each character in the string to an alphanumeric character (`0-9`, `a-z`, or `A-Z`) or an underscore (`_`). Many characters which are alphanumeric symbols variations (such as accented letters, alternate fonts, etc.) are respectively converted to their ASCII counterparts (e.g. `é` -> `e`).
