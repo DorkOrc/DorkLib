@@ -20,10 +20,11 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 ## Entity Functions
 
 <details>
-  <summary><h3>Remove Entity Discretely - <code>execute as <targets> run function do:remove_entity</code></h3></summary>
+  <summary><h3>Remove Entity Discretely - <code>execute as &lt;targets&gt; run function do:remove_entity</code></h3></summary>
 
-  Kills the entity without any death animation, loot, or vibrations occurring. Strictly speaking, it dismounts the entity's passengers, teleports the entity to the lowest y-position directly below them, then kills them. 
-  This is useful for non-mob entities too, such as markers, as using `/kill` would normally create a vibration at the location of the marker entity.
+  Kills the entity without any death animation, loot/xp drops, or vibrations occurring. Strictly speaking, it dismounts the entity's passengers, teleports the entity to the lowest y-position directly below them, then kills them. 
+  This function is useful for non-mob entities too, such as markers, as using `/kill` would normally create a vibration at the location of the marker entity - [MC-220397](https://bugs.mojang.com/browse/MC/issues/MC-220397).
+  This may also be chained in `/execute` as `if function do:remove_entity` to kill an entity which was temporarily summoned with the `summon` sub-command. **Note** that you should make sure to position as the entity *before* running this function as the teleport into the void may cause issues. Unfortunately, I can't make the function teleport the entity into the void, then kill it, then teleport it back - [MC-276062](https://bugs.mojang.com/browse/MC/issues/MC-276062).
   Not intended to be ran as players.
 </details>
 
