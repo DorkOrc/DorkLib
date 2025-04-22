@@ -7,6 +7,9 @@ data modify storage dorklib:main functions."do:str/chars".next_character set str
 function dorklib:impl/str/chars/check_for_surrogate_pair with storage dorklib:main functions."do:str/chars"
 execute if score #found_surrogate_pair dorklib.var matches 1 run data modify storage dorklib:main functions."do:str/chars".temp_string set string storage dorklib:main functions."do:str/chars".temp_string 1
 
+# run function
+execute if score #run_function dorklib.var matches 1 run function dorklib:impl/str/chars/run_function with storage do:io args
+
 # append character
 data modify storage do:io output append from storage dorklib:main functions."do:str/chars".c
 
