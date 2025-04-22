@@ -17,7 +17,17 @@ function do:str/split. {args:{separator:"_"}}
 
 Once a function is ran, the `input` and `args` fields will be deleted, leaving only the `output`.
 
-## String Functions
+## Entity Functions
+
+<details>
+  <summary><h3>Remove Entity Discretely - <code>execute as <targets> run function do:remove_entity</code></h3></summary>
+
+  Kills the entity without any death animation, loot, or vibrations occurring. Strictly speaking, it dismounts the entity's passengers, teleports the entity to the lowest y-position directly below them, then kills them. 
+  This is useful for non-mob entities too, such as markers, as using `/kill` would normally create a vibration at the location of the marker entity.
+  Not intended to be ran as players.
+</details>
+
+## String I/O Functions
 
 <details>
   <summary><h3>Concatenate Strings - <code>do:str/join</code></h3></summary>
@@ -39,30 +49,6 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Escape Double-Quotes - <code>do:str/escape/double_quote</code></h3></summary>
-
-  Inserts backslash characters before each `\` and `"` character. Also replaces several special characters with their respective escape sequences (e.g. `\n`).
-  > `(input: str) -> str`
-  - `storage do:io input` is a string.
-</details>
-
-<details>
-  <summary><h3>Escape Single-Quotes - <code>do:str/escape/single_quote</code></h3></summary>
-
-  Inserts backslash characters before each `\` and `'` character. Also replaces several special characters with their respective escape sequences (e.g. `\n`).
-  > `(input: str) -> str`
-  - `storage do:io input` is a string.
-</details>
-
-<details>
-  <summary><h3>Get Characters (respecting surrogate pairs) - <code>do:str/chars</code></h3></summary>
-
-  Gets a list of the characters in the string **without** splitting apart surrogate pairs.
-  > `(input: str) -> list[chr, ...]`
-  - `storage do:io input` is a string.
-</details>
-
-<details>
   <summary><h3>Convert to Lowercase - <code>do:str/lower</code></h3></summary>
 
   Converts each character in the string to its lowercase counterpart, if possible. Uses [this mapping](https://www.ibm.com/docs/en/i/7.3.0?topic=tables-unicode-uppercase-lowercase-conversion-mapping-table) of unicode characters.
@@ -81,12 +67,36 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 <details>
   <summary><h3>Convert to Alphanumeric - <code>do:str/alphanumeric</code></h3></summary>
 
-  Converts each character in the string to an alphanumeric character (`0-9`, `a-z`, or `A-Z`) or an underscore (`_`). Many characters which are alphanumeric symbols variations (such as accented letters, alternate fonts, etc.) are respectively converted to their ASCII counterparts (e.g. `é` -> `e`).
+  Converts each character in the string to an alphanumeric character (`0-9`, `a-z`, or `A-Z`) or an underscore (`_`). Many characters which are alphanumeric symbol variations (such as accented letters, alternate fonts, etc.) are respectively converted to their ASCII counterparts (e.g. `é` -> `e`).
   > `(input: str) -> str`
   - `storage do:io input` is a string.
 </details>
 
-## Text Component Functions
+<details>
+  <summary><h3>Get Characters (respecting surrogate pairs) - <code>do:str/chars</code></h3></summary>
+
+  Gets a list of the characters in the string **without** splitting apart surrogate pairs.
+  > `(input: str) -> list[chr, ...]`
+  - `storage do:io input` is a string.
+</details>
+
+<details>
+  <summary><h3>Escape Double-Quotes - <code>do:str/escape/double_quote</code></h3></summary>
+
+  Inserts backslash characters before each `\` and `"` character. Also replaces several special characters with their respective escape sequences (e.g. `\n`).
+  > `(input: str) -> str`
+  - `storage do:io input` is a string.
+</details>
+
+<details>
+  <summary><h3>Escape Single-Quotes - <code>do:str/escape/single_quote</code></h3></summary>
+
+  Inserts backslash characters before each `\` and `'` character. Also replaces several special characters with their respective escape sequences (e.g. `\n`).
+  > `(input: str) -> str`
+  - `storage do:io input` is a string.
+</details>
+
+## Text Component I/O Functions
 
 <details>
   <summary><h3>Resolve Text Component - <code>do:text/resolve</code></h3></summary>
@@ -104,7 +114,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io input` is a text component.
 </details>
 
-## NBT Functions
+## NBT I/O Functions
 
 <details>
   <summary><h3>Get Data Type - <code>do:nbt/type</code></h3></summary>
