@@ -4,4 +4,4 @@ tellraw @a[tag=dorklib.admin] {color:"gray",italic:true,translate:"chat.type.adm
     [\
         {storage:"do:io",nbt:"exception.message",interpret:true}\
     ]\
-],hover_event:{action:"show_text",value:{storage:"dorklib:main",nbt:"exception"}}}
+],hover_event:{action:"show_text",value:{storage:"do:io",nbt:"exception"}}}
