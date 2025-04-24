@@ -20,7 +20,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 ## Entity Functions
 
 <details>
-  <summary><h3>Remove Entity Discretely - <code>execute as &lt;targets&gt; run function do:remove_entity</code></h3></summary>
+  <summary><h3>Remove Entity Discretely - <code>function do:remove_entity</code></h3></summary>
 
   Kills the entity without any death animation, loot/xp drops, or vibrations occurring. Strictly speaking, it dismounts the entity's passengers, teleports the entity to the lowest y-position directly below them, then kills them. 
 
@@ -32,12 +32,18 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Summon Passenger - <code>execute as &lt;target&gt; run function do:summon/passenger {id:"...",nbt:{...},function:"..."}</code></h3></summary>
+  <summary><h3>Summon Passenger - <code>function do:summon/passenger {id, nbt, function}</code></h3></summary>
 
   Summons an entity which immediately mounts the executing entity, and then runs a function.
   - `id` is an entity type ID.
   - `nbt` is an NBT compound of tags to summon the entity with. If specified with at least one tag, the entity is summoned with that data directly. If left empty, the entity is summoned with default randomness. `UUID` and `Pos` tags are ignored.
-  - `function` is a function (without macro arguments) to run as the entity immediately after it mounts its vehicle.
+  - `function` is a function (without macro arguments) to run as the entity immediately after it mounts its vehicle. If empty, no function is ran.
+
+  e.g.
+  ```
+  execute as @n[type=chicken] run function do:summon/passenger {id:"minecraft:zombie",nbt:{IsBaby:1b},function:""}
+  ```
+
 </details>
 
 ## String I/O Functions
