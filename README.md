@@ -51,7 +51,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 <details>
   <summary><h3>Concatenate Strings - <code>do:str/join</code></h3></summary>
 
-  Joins a list of strings together, returning a single string.
+  Joins a list of strings together, returning a single string. Works with any arbitrary strings by escaping special characters as `"` (or `'`) and `\` before macro concatenation.
   > `(input: list[str, ...], separator: str = "") -> str`
   - `storage do:io input` is a list of strings. Any numerical types will be converted to strings. Any compound, list, or array types will be ignored.
   - `storage do:io args.separator` (*Optional*) is a string. This will be inserted between each string in the inputted list. Omitting this field will not insert anything between the strings.
