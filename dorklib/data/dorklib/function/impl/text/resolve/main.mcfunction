@@ -1,5 +1,6 @@
 # if the function is not executing as an entity, use a temporary marker
 execute unless entity @s summon marker if function do:remove_entity run return run function dorklib:impl/text/resolve/main
+execute in minecraft:overworld unless loaded -30000000 0 1602 summon item_display if function do:remove_entity run return run function dorklib:impl/text/resolve/use_item_display
 
 # default output is an empty string
 data modify storage do:io output set value ""
