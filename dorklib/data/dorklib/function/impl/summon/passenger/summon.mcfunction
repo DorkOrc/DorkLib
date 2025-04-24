@@ -1,6 +1,7 @@
 # arguments: id, nbt, function
 
 execute if score #nbt_tags dorklib.var matches 0 run return run function dorklib:impl/summon/passenger/summon_soft with storage dorklib:local functions."do:summon/passenger"
+
 return run function dorklib:impl/summon/passenger/summon_strict with storage dorklib:local functions."do:summon/passenger"
 
 # validate macro inputs

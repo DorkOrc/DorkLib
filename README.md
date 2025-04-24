@@ -34,14 +34,15 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 <details>
   <summary><h3>Summon Passenger - <code>function do:summon/passenger {id, nbt, function}</code></h3></summary>
 
-  Summons an entity which immediately mounts the executing entity, and then runs a function.
-  - `id` is an entity type ID.
-  - `nbt` is an NBT compound of tags to summon the entity with. If specified with at least one tag, the entity is summoned with that data directly. If left empty, the entity is summoned with default randomness. `UUID` and `Pos` tags are ignored.
-  - `function` is a function (without macro arguments) to run as the entity immediately after it mounts its vehicle. If empty, no function is ran.
+  Summons an entity which immediately mounts the executing entity, and then optionally runs a function.
+  > `(input: str|None, id: str|None = None, nbt: compound|None = None, function: str|None = None) -> str`
+  - `id` (*Required when Inlined*) is an entity type ID. Overrides the `input`.
+  - `nbt` (*Optional*) is an NBT compound of tags to summon the entity with. If specified, the entity is summoned with that data directly. If omitted, the entity is summoned with default randomness. `UUID` and `Pos` tags are ignored.
+  - `function` (*Optional*) is a function ID (without macro arguments) to run as the entity immediately after it mounts its vehicle. If omitted, no function is ran.
 
   e.g.
   ```
-  execute as @n[type=chicken] run function do:summon/passenger {id:"minecraft:zombie",nbt:{IsBaby:1b},function:""}
+  execute as @n[type=chicken] run function do:summon/passenger {args:{id:"minecraft:zombie",nbt:{IsBaby:1b},function:"namespace:test"}}
   ```
 
 </details>
