@@ -31,6 +31,15 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   This is not intended to be ran as a player but, if it is, they will be killed as if `doImmediateRespawn` is true, `keepInventory` is true, and `showDeathMessages` is false, but without actually changing the gamerules. The player will not be teleported into the void, meaning the death will still trigger sculk sensors and a hurt sound will play. However, this means `entity_hurt_player` advancement triggers will run at the correct location and the `LastDeathLocation` will be saved correctly. Any scoreboards tracking the `custom:deaths` or `deathCount` stats will still increase.
 </details>
 
+<details>
+  <summary><h3>Summon Passenger - <code>execute as &lt;target&gt; run function do:summon/passenger {id:"...",nbt:{...},function:"..."}</code></h3></summary>
+
+  Summons an entity which immediately mounts the executing entity, and then runs a function.
+  - `id` is an entity type ID.
+  - `nbt` is an NBT compound of tags to summon the entity with. If specified with at least one tag, the entity is summoned with that data directly. If left empty, the entity is summoned with default randomness. `UUID` and `Pos` tags are ignored.
+  - `function` is a function (without macro arguments) to run as the entity immediately after it mounts its vehicle.
+</details>
+
 ## String I/O Functions
 
 <details>

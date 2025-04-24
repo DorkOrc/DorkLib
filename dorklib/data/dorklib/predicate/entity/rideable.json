@@ -1,0 +1,16 @@
+{
+	"condition": "minecraft:inverted",
+	"term": {
+		"condition": "minecraft:entity_properties",
+		"entity": "this",
+		"predicate": {
+			"type": [
+				"minecraft:player",
+				"minecraft:marker",
+				"minecraft:leash_knot",
+				"minecraft:lightning_bolt",
+				"minecraft:fishing_bobber"
+			]
+		}
+	}
+}
