@@ -104,6 +104,17 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io input` is a string.
 </details>
 
+## List (& Array) I/O Functions
+
+<details>
+  <summary><h3>Get the Index of a Value in a List - <code>do:list/index</code></h3></summary>
+
+  Gets the index of a value in a list.
+  > `(input: list) -> int`
+  - `storage do:io input` is a list.
+  - `storage do:io args.value` is any value.
+</details>
+
 ## Compound I/O Functions
 
 <details>
