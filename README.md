@@ -107,14 +107,6 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 ## Compound I/O Functions
 
 <details>
-  <summary><h3>Dump Compound as Components List - <code>do:compound/write_components</code></h3></summary>
-
-  Converts an NBT compound into a string containing its key-value pairs separated by equals signs and wrapped in square brackets. e.g. `{"minecraft:custom_name":"Bob"}` -> `[minecraft:custom_name="Bob"]`
-  > `(input: Any) -> str`
-  - `storage do:io input` is any value.
-</details>
-
-<details>
   <summary><h3>Get the Items of a Compound - <code>do:compound/items</code></h3></summary>
 
   Gets a list of the key-value pairs of the compound. Each element of the output list is a compounds with a "key" and "value" child. They, respectively, store the key and the value associated with that key in the input compound.
@@ -146,6 +138,16 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io input` is a compound.
   - `storage do:io args.key` is a string.
   - `storage do:io args.default` (*Optional*) is a string.
+</details>
+
+<details>
+  <summary><h3>Dump Compound as Components List - <code>do:compound/write_components</code></h3></summary>
+
+  Converts an NBT compound into a string containing its key-value pairs separated by equals signs and wrapped in square brackets. e.g. `{"minecraft:custom_name":"Bob"}` -> `[minecraft:custom_name="Bob"]`
+  > `(input: Any) -> str`
+  - `storage do:io input` is a compound of *component*:*value* pairs.
+  - `storage do:io args.predicates` (*Optional*) is a compound of *component*:*component-predicate* pairs. Each key-value pair gets inserted with `~` as the key-value separator instead of `=`.
+  - `storage do:io args.components` (*Optional*) is a list of component IDs. Each component ID gets inserted without a paired value.
 </details>
 
 ## NBT I/O Functions
