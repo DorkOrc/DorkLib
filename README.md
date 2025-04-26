@@ -205,6 +205,8 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 
 ## Raycasting Functions (Voxel Traversal)
 
+These functions use a voxel traversal algorithm, so they are both very efficient and very precise. The current implementation does not take into account the physical hitboxes of blocks, and ignores entities.
+
 <details>
   <summary><h3>Raycast to Block - <code>do:raycast/to_block</code></h3></summary>
 
