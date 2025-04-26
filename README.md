@@ -170,6 +170,14 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
+  <summary><h3>Dump Compound as Components List - <code>do:nbt/compound/write_components</code></h3></summary>
+
+  Converts an NBT compound into a string containing its key-value pairs separated by equals signs and wrapped in square brackets. e.g. `{"minecraft:custom_name":"Bob"}` -> `[minecraft:custom_name="Bob"]`
+  > `(input: Any) -> str`
+  - `storage do:io input` is any value.
+</details>
+
+<details>
   <summary><h3>Get the Items of a Compound - <code>do:nbt/compound/items</code></h3></summary>
 
   Gets a list of the key-value pairs of the compound. Each element of the output list is a compounds with a "key" and "value" child. They, respectively, store the key and the value associated with that key in the input compound.
