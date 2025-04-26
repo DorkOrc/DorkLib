@@ -19,4 +19,4 @@ scoreboard players operation #p_z dorklib.var += #change dorklib.var
 
 # run function
 scoreboard players set #exceeded_max_distance dorklib.var 1
-function dorklib:impl/raycast/to_block/final_destination/main with storage dorklib:local functions."do:raycast/to_block"
+function dorklib:impl/raycast/to_block/final_destination/main with storage dorklib:main functions."do:raycast/to_block"

@@ -3,7 +3,7 @@ execute unless data storage do:io args.function run return run function dorklib:
 scoreboard players set #valid_function dorklib.var 0
 function dorklib:impl/raycast/to_block/validate_function with storage do:io args
 execute if score #valid_function dorklib.var matches 0 run return run function dorklib:exception {args:{message:"Invalid \"function\" argument"}}
-data modify storage dorklib:local functions."do:raycast/to_block".function set from storage do:io args.function
+data modify storage dorklib:main functions."do:raycast/to_block".function set from storage do:io args.function
 
 execute store success score #require_hit dorklib.var if data storage do:io args{require_hit:true}
 

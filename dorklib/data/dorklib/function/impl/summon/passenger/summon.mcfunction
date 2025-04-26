@@ -1,8 +1,8 @@
 # arguments: id, nbt, function
 
-execute if score #nbt_tags dorklib.var matches 0 run return run function dorklib:impl/summon/passenger/summon_soft with storage dorklib:local functions."do:summon/passenger"
+execute if score #nbt_tags dorklib.var matches 0 run return run function dorklib:impl/summon/passenger/summon_soft with storage dorklib:main functions."do:summon/passenger"
 
-return run function dorklib:impl/summon/passenger/summon_strict with storage dorklib:local functions."do:summon/passenger"
+return run function dorklib:impl/summon/passenger/summon_strict with storage dorklib:main functions."do:summon/passenger"
 
 # validate macro inputs
 $execute summon $(id) if entity @s[type=$(id),nbt=$(nbt)] if function $(function) if data entity @s $(nbt) run function $(function) {}
