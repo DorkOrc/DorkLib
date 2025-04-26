@@ -202,3 +202,35 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io args.key` is a string.
   - `storage do:io args.default` (*Optional*) is a string.
 </details>
+
+## Raycasting Functions (Voxel Traversal)
+
+<details>
+  <summary><h3>Raycast to Block - <code>do:raycast/to_block</code></h3></summary>
+
+  Casts a ray in the direction of execution, then runs a function at the centre of the first block it hits. Entities are ignored. If no block is encountered, stops after "max_distance". Current implementation assumes that all block hitboxes are cubes.
+  > `(function: str, require_hit: bool = False, max_distance: num = 64) -> None`
+  - `storage do:io args.function` is a string containing a function ID.
+  - `storage do:io args.require_hit` (*Optional*) is a boolean. If true, the function will only run if the ray hits a block. Defaults to *false*.
+  - `storage do:io args.max_distance` (*Optional*) is a positive number. Specifies the maximum distance that the ray can travel before stopping. Defaults to *64*.
+</details>
+
+<details>
+  <summary><h3>Raycast to Inner Block Edge - <code>do:raycast/to_inner_edge</code></h3></summary>
+
+  Casts a ray in the direction of execution, then runs a function at the inner edge of the first block it hits (always inside the block). Entities are ignored. If no block is encountered, stops after "max_distance". Current implementation assumes that all block hitboxes are cubes.
+  > `(function: str, require_hit: bool = False, max_distance: num = 64) -> None`
+  - `storage do:io args.function` is a string containing a function ID.
+  - `storage do:io args.require_hit` (*Optional*) is a boolean. If true, the function will only run if the ray hits a block. Defaults to *false*.
+  - `storage do:io args.max_distance` (*Optional*) is a positive number. Specifies the maximum distance that the ray can travel before stopping. Defaults to *64*.
+</details>
+
+<details>
+  <summary><h3>Raycast to Outer Block Edge - <code>do:raycast/to_outer_edge</code></h3></summary>
+
+  Casts a ray in the direction of execution, then runs a function on the outer edge of the first block it hits (never inside the block). Entities are ignored. If no block is encountered, stops after "max_distance". Current implementation assumes that all block hitboxes are cubes.
+  > `(function: str, require_hit: bool = False, max_distance: num = 64) -> None`
+  - `storage do:io args.function` is a string containing a function ID.
+  - `storage do:io args.require_hit` (*Optional*) is a boolean. If true, the function will only run if the ray hits a block. Defaults to *false*.
+  - `storage do:io args.max_distance` (*Optional*) is a positive number. Specifies the maximum distance that the ray can travel before stopping. Defaults to *64*.
+</details>

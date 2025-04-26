@@ -1,0 +1,25 @@
+# validate function argument
+execute unless data storage do:io args.function run return run function dorklib:exception {args:{message:"Missing \"function\" argument"}}
+scoreboard players set #valid_function dorklib.var 0
+function dorklib:impl/raycast/to_block/validate_function with storage do:io args
+execute if score #valid_function dorklib.var matches 0 run return run function dorklib:exception {args:{message:"Invalid \"function\" argument"}}
+data modify storage dorklib:local functions."do:raycast/to_block".function set from storage do:io args.function
+
+execute store success score #require_hit dorklib.var if data storage do:io args{require_hit:true}
+
+# initialise vectors
+execute summon marker run function dorklib:impl/raycast/to_block/get_vectors
+
+# set max distance
+scoreboard players set #exceeded_max_distance dorklib.var 0
+scoreboard players set #max_distance dorklib.var 65536
+scoreboard players set #max_iterations dorklib.var 111
+execute if data storage do:io args.max_distance run function dorklib:impl/raycast/to_block/get_max_iterations
+execute if score #max_distance dorklib.var matches ..0 run return run function dorklib:exception {args:{message:"Max distance must be larger than or equal to 0.0009765625"}}
+
+# start voxel traversal
+scoreboard players set #i dorklib.var 0
+scoreboard players set #distance_travelled dorklib.var 0
+execute align xyz positioned ~.5 ~.5 ~.5 run function dorklib:impl/raycast/to_block/loop
+
+return 1
