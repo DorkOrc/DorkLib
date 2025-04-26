@@ -218,7 +218,7 @@ These functions use a voxel traversal algorithm, so they are both very efficient
 ## Entity Functions
 
 <details>
-  <summary><h3>Remove Entity Discretely - <code>function do:remove_entity</code></h3></summary>
+  <summary><h3>Remove Entity Discretely - <code>function do:entity/remove</code></h3></summary>
 
   Kills the entity without any death animation, loot/xp drops, or vibrations occurring. Strictly speaking, it dismounts the entity's passengers, teleports the entity to the lowest y-position directly below them, then kills them. 
 
