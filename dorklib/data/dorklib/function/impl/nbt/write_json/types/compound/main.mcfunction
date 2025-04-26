@@ -3,7 +3,7 @@
 
 # get compound items list
 data modify storage do:io input set from storage dorklib:main functions."do:nbt/write_json".stack[-1].value
-function do:nbt/compound/items
+function do:compound/items
 data modify storage dorklib:main functions."do:nbt/write_json".stack[-1].items set from storage do:io output
 
 # iterate through items
