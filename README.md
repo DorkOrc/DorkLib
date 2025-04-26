@@ -107,7 +107,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 ## Compound I/O Functions
 
 <details>
-  <summary><h3>Dump Compound as Components List - <code>do:nbt/compound/write_components</code></h3></summary>
+  <summary><h3>Dump Compound as Components List - <code>do:compound/write_components</code></h3></summary>
 
   Converts an NBT compound into a string containing its key-value pairs separated by equals signs and wrapped in square brackets. e.g. `{"minecraft:custom_name":"Bob"}` -> `[minecraft:custom_name="Bob"]`
   > `(input: Any) -> str`
@@ -115,7 +115,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Get the Items of a Compound - <code>do:nbt/compound/items</code></h3></summary>
+  <summary><h3>Get the Items of a Compound - <code>do:compound/items</code></h3></summary>
 
   Gets a list of the key-value pairs of the compound. Each element of the output list is a compounds with a "key" and "value" child. They, respectively, store the key and the value associated with that key in the input compound.
   > `(input: compound) -> list[compound{key: str, value: Any}, ...]`
@@ -123,7 +123,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Get the Keys of a Compound - <code>do:nbt/compound/keys</code></h3></summary>
+  <summary><h3>Get the Keys of a Compound - <code>do:compound/keys</code></h3></summary>
 
   Gets a list of the keys of the compound.
   > `(input: compound) -> list[str, ...]`
@@ -131,7 +131,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Get the Values of a Compound - <code>do:nbt/compound/values</code></h3></summary>
+  <summary><h3>Get the Values of a Compound - <code>do:compound/values</code></h3></summary>
 
   Gets a list of the values associated with each key of the compound.
   > `(input: compound) -> list[Any, ...]`
@@ -139,7 +139,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h3>Get the Value of a Key in a Compound - <code>do:nbt/compound/get</code></h3></summary>
+  <summary><h3>Get the Value of a Key in a Compound - <code>do:compound/get</code></h3></summary>
 
   Gets the value associated with the "key" argument. If the key is not present in the compound, the "default" argument is used. If no default is provided, the function fails.
   > `(input: compound, key: str, default: Any = None) -> Any`
