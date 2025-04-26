@@ -17,36 +17,6 @@ function do:str/split. {args:{separator:"_"}}
 
 Once a function is ran, the `input` and `args` fields will be deleted, leaving only the `output`.
 
-## Entity Functions
-
-<details>
-  <summary><h3>Remove Entity Discretely - <code>function do:remove_entity</code></h3></summary>
-
-  Kills the entity without any death animation, loot/xp drops, or vibrations occurring. Strictly speaking, it dismounts the entity's passengers, teleports the entity to the lowest y-position directly below them, then kills them. 
-
-  This function is useful for non-mob entities too, such as markers, as using `/kill` would normally create a vibration at the location of the marker entity - [MC-220397](https://bugs.mojang.com/browse/MC/issues/MC-220397).
-
-  This may also be chained in `/execute` as `if function do:remove_entity` to kill an entity which was temporarily summoned with the `summon` sub-command. **Note** that you should make sure to position as the entity *before* running this function as the teleport into the void may cause issues. Unfortunately, I can't make the function teleport the entity into the void, then kill it, then teleport it back - [MC-276062](https://bugs.mojang.com/browse/MC/issues/MC-276062).
-
-  This is not intended to be ran as a player but, if it is, they will be killed as if `doImmediateRespawn` is true, `keepInventory` is true, and `showDeathMessages` is false, but without actually changing the gamerules. The player will not be teleported into the void, meaning the death will still trigger sculk sensors and a hurt sound will play. However, this means `entity_hurt_player` advancement triggers will run at the correct location and the `LastDeathLocation` will be saved correctly. Any scoreboards tracking the `custom:deaths` or `deathCount` stats will still increase.
-</details>
-
-<details>
-  <summary><h3>Summon Passenger - <code>function do:summon/passenger {id, nbt, function}</code></h3></summary>
-
-  Summons an entity which immediately mounts the executing entity, and then optionally runs a function.
-  > `(input: str|None, id: str|None = None, nbt: compound|None = None, function: str|None = None) -> str`
-  - `id` (*Required when Inlined*) is an entity type ID. Overrides the `input`.
-  - `nbt` (*Optional*) is an NBT compound of tags to summon the entity with. If specified, the entity is summoned with that data directly. If omitted, the entity is summoned with default randomness. `UUID` and `Pos` tags are ignored.
-  - `function` (*Optional*) is a function ID (without macro arguments) to run as the entity immediately after it mounts its vehicle. If omitted, no function is ran.
-
-  e.g.
-  ```
-  execute as @n[type=chicken] run function do:summon/passenger {args:{id:"minecraft:zombie",nbt:{IsBaby:1b},function:"namespace:test"}}
-  ```
-
-</details>
-
 ## String I/O Functions
 
 <details>
@@ -243,4 +213,34 @@ These functions use a voxel traversal algorithm, so they are both very efficient
   - `storage do:io args.function` is a string containing a function ID.
   - `storage do:io args.require_hit` (*Optional*) is a boolean. If true, the function will only run if the ray hits a block. Defaults to *false*.
   - `storage do:io args.max_distance` (*Optional*) is a positive number. Specifies the maximum distance that the ray can travel before stopping. Defaults to *64*.
+</details>
+
+## Entity Functions
+
+<details>
+  <summary><h3>Remove Entity Discretely - <code>function do:remove_entity</code></h3></summary>
+
+  Kills the entity without any death animation, loot/xp drops, or vibrations occurring. Strictly speaking, it dismounts the entity's passengers, teleports the entity to the lowest y-position directly below them, then kills them. 
+
+  This function is useful for non-mob entities too, such as markers, as using `/kill` would normally create a vibration at the location of the marker entity - [MC-220397](https://bugs.mojang.com/browse/MC/issues/MC-220397).
+
+  This may also be chained in `/execute` as `if function do:remove_entity` to kill an entity which was temporarily summoned with the `summon` sub-command. **Note** that you should make sure to position as the entity *before* running this function as the teleport into the void may cause issues. Unfortunately, I can't make the function teleport the entity into the void, then kill it, then teleport it back - [MC-276062](https://bugs.mojang.com/browse/MC/issues/MC-276062).
+
+  This is not intended to be ran as a player but, if it is, they will be killed as if `doImmediateRespawn` is true, `keepInventory` is true, and `showDeathMessages` is false, but without actually changing the gamerules. The player will not be teleported into the void, meaning the death will still trigger sculk sensors and a hurt sound will play. However, this means `entity_hurt_player` advancement triggers will run at the correct location and the `LastDeathLocation` will be saved correctly. Any scoreboards tracking the `custom:deaths` or `deathCount` stats will still increase.
+</details>
+
+<details>
+  <summary><h3>Summon Passenger - <code>function do:summon/passenger {id, nbt, function}</code></h3></summary>
+
+  Summons an entity which immediately mounts the executing entity, and then optionally runs a function.
+  > `(input: str|None, id: str|None = None, nbt: compound|None = None, function: str|None = None) -> str`
+  - `id` (*Required when Inlined*) is an entity type ID. Overrides the `input`.
+  - `nbt` (*Optional*) is an NBT compound of tags to summon the entity with. If specified, the entity is summoned with that data directly. If omitted, the entity is summoned with default randomness. `UUID` and `Pos` tags are ignored.
+  - `function` (*Optional*) is a function ID (without macro arguments) to run as the entity immediately after it mounts its vehicle. If omitted, no function is ran.
+
+  e.g.
+  ```
+  execute as @n[type=chicken] run function do:summon/passenger {args:{id:"minecraft:zombie",nbt:{IsBaby:1b},function:"namespace:test"}}
+  ```
+
 </details>
