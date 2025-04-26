@@ -17,6 +17,24 @@ function do:str/split. {args:{separator:"_"}}
 
 Once a function is ran, the `input` and `args` fields will be deleted, leaving only the `output`.
 
+## Text Component I/O Functions
+
+<details>
+  <summary><h3>Resolve Text Component - <code>do:text/resolve</code></h3></summary>
+
+  Resolves the text component. Uses the entity context of the executor. If no entity is executing, a temporary marker will be used.
+  > `(input: str|compound|list) -> str|compound`
+  - `storage do:io input` is a text component.
+</details>
+
+<details>
+  <summary><h3>Flatten Text Component - <code>do:text/flatten</code></h3></summary>
+
+  Flattens the text component into a single string.
+  > `(input: str|compound|list) -> str`
+  - `storage do:io input` is a text component.
+</details>
+
 ## String I/O Functions
 
 <details>
@@ -86,58 +104,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io input` is a string.
 </details>
 
-## Text Component I/O Functions
-
-<details>
-  <summary><h3>Resolve Text Component - <code>do:text/resolve</code></h3></summary>
-
-  Resolves the text component. Uses the entity context of the executor. If no entity is executing, a temporary marker will be used.
-  > `(input: str|compound|list) -> str|compound`
-  - `storage do:io input` is a text component.
-</details>
-
-<details>
-  <summary><h3>Flatten Text Component - <code>do:text/flatten</code></h3></summary>
-
-  Flattens the text component into a single string.
-  > `(input: str|compound|list) -> str`
-  - `storage do:io input` is a text component.
-</details>
-
-## NBT I/O Functions
-
-<details>
-  <summary><h3>Get Data Type - <code>do:nbt/type</code></h3></summary>
-
-  Gets the data type of the input. The options are `byte`, `short`, `int`, `long`, `float`, `double`, `string`, `compound`, `list`, `byte_array`, `int_array`, and `long_array`.
-  > `(input: Any) -> str`
-  - `storage do:io input` is any value.
-</details>
-
-<details>
-  <summary><h3>Read SNBT - <code>do:nbt/read_snbt</code></h3></summary>
-
-  Converts a string containing SNBT into the NBT object that it represents.
-  > `(input: str) -> Any`
-  - `storage do:io input` is a string containing SNBT.
-</details>
-
-<details>
-  <summary><h3>Dump NBT as SNBT - <code>do:nbt/write_snbt</code></h3></summary>
-
-  Converts any NBT object into a string containing its SNBT representation. This is different from `/data modify ... <op> string ...` as it wraps strings in quote marks and accepts compound, list, and array types. 
-  > `(input: Any) -> str`
-  - `storage do:io input` is any value.
-</details>
-
-<details>
-  <summary><h3>Dump NBT as JSON - <code>do:nbt/write_json</code></h3></summary>
-
-  Converts any NBT object into a string containing its JSON representation.
-  > `(input: Any) -> str`
-  - `storage do:io input` is any value.
-  - `storage do:io args.byte_as_boolean` (*Optional*) is a boolean. If true, 0b and 1b will be written as false and true respectively.
-</details>
+## Compound I/O Functions
 
 <details>
   <summary><h3>Dump Compound as Components List - <code>do:nbt/compound/write_components</code></h3></summary>
@@ -179,6 +146,41 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io input` is a compound.
   - `storage do:io args.key` is a string.
   - `storage do:io args.default` (*Optional*) is a string.
+</details>
+
+## NBT I/O Functions
+
+<details>
+  <summary><h3>Get Data Type - <code>do:nbt/type</code></h3></summary>
+
+  Gets the data type of the input. The options are `byte`, `short`, `int`, `long`, `float`, `double`, `string`, `compound`, `list`, `byte_array`, `int_array`, and `long_array`.
+  > `(input: Any) -> str`
+  - `storage do:io input` is any value.
+</details>
+
+<details>
+  <summary><h3>Read SNBT - <code>do:nbt/read_snbt</code></h3></summary>
+
+  Converts a string containing SNBT into the NBT object that it represents.
+  > `(input: str) -> Any`
+  - `storage do:io input` is a string containing SNBT.
+</details>
+
+<details>
+  <summary><h3>Dump NBT as SNBT - <code>do:nbt/write_snbt</code></h3></summary>
+
+  Converts any NBT object into a string containing its SNBT representation. This is different from `/data modify ... <op> string ...` as it wraps strings in quote marks and accepts compound, list, and array types. 
+  > `(input: Any) -> str`
+  - `storage do:io input` is any value.
+</details>
+
+<details>
+  <summary><h3>Dump NBT as JSON - <code>do:nbt/write_json</code></h3></summary>
+
+  Converts any NBT object into a string containing its JSON representation.
+  > `(input: Any) -> str`
+  - `storage do:io input` is any value.
+  - `storage do:io args.byte_as_boolean` (*Optional*) is a boolean. If true, 0b and 1b will be written as false and true respectively.
 </details>
 
 ## Raycasting Functions (Voxel Traversal)
