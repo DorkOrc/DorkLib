@@ -3,7 +3,7 @@
 execute if score #require_hit dorklib.var matches 1 if score #exceeded_max_distance dorklib.var matches 1 run return fail
 
 # 0 => block centre
-$execute if score #traverse_to dorklib.var matches 0 align xyz run return run function $(function)
+$execute if score #traverse_to dorklib.var matches 0 run return run function $(function)
 
 # 1 => block inner edge
 execute if score #traverse_to dorklib.var matches 1 if score #p_x dorklib.var matches 1024 run scoreboard players set #p_x dorklib.var 1023
