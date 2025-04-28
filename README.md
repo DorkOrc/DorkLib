@@ -219,6 +219,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io args.function` is a string containing a function ID.
   - `storage do:io args.require_hit` (*Optional*) is a boolean. If true, the function will only run if the ray hits a block. Defaults to *false*.
   - `storage do:io args.max_distance` (*Optional*) is a positive number. Specifies the maximum distance that the ray can travel before stopping. Defaults to *64*.
+  - `storage do:io args.location_condition` (*Optional*) is a predicate ID or inlined predicate. The condition for what blocks/fluids cam be hit. The predicate is ran at the centre of each block that the ray intersects with. Defaults to *any block that is not air, cave_air, or void_air*.
   </details>
 
   <details>
@@ -229,6 +230,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io args.function` is a string containing a function ID.
   - `storage do:io args.require_hit` (*Optional*) is a boolean. If true, the function will only run if the ray hits a block. Defaults to *false*.
   - `storage do:io args.max_distance` (*Optional*) is a positive number. Specifies the maximum distance that the ray can travel before stopping. Defaults to *64*.
+  - `storage do:io args.location_condition` (*Optional*) is a predicate ID or inlined predicate. The condition for what blocks/fluids cam be hit. The predicate is ran at the centre of each block that the ray intersects with. Defaults to *any block that is not air, cave_air, or void_air*.
   </details>
 
   <details>
@@ -239,6 +241,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io args.function` is a string containing a function ID.
   - `storage do:io args.require_hit` (*Optional*) is a boolean. If true, the function will only run if the ray hits a block. Defaults to *false*.
   - `storage do:io args.max_distance` (*Optional*) is a positive number. Specifies the maximum distance that the ray can travel before stopping. Defaults to *64*.
+  - `storage do:io args.location_condition` (*Optional*) is a predicate ID or inlined predicate. The condition for what blocks/fluids cam be hit. The predicate is ran at the centre of each block that the ray intersects with. Defaults to *any block that is not air, cave_air, or void_air*.
   </details>
 </details>
 

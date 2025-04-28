@@ -24,7 +24,7 @@ execute if score #d_z dorklib.var matches ..-1 run scoreboard players set #p_z d
 
 # update block position and reiterate
 execute if score #d_z dorklib.var matches 1.. run scoreboard players add #b_z dorklib.var 1
-execute if score #d_z dorklib.var matches 1.. positioned ~ ~ ~1 run return run function dorklib:impl/raycast/to_block/loop
+execute if score #d_z dorklib.var matches 1.. positioned ~ ~ ~1 run return run function dorklib:impl/raycast/to_block/loop with storage dorklib:main functions."do:raycast/to_block"
 
 execute if score #d_z dorklib.var matches ..-1 run scoreboard players remove #b_z dorklib.var 1
-execute if score #d_z dorklib.var matches ..-1 positioned ~ ~ ~-1 run return run function dorklib:impl/raycast/to_block/loop
+execute if score #d_z dorklib.var matches ..-1 positioned ~ ~ ~-1 run return run function dorklib:impl/raycast/to_block/loop with storage dorklib:main functions."do:raycast/to_block"

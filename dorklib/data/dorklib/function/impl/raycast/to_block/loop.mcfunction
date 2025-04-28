@@ -1,9 +1,11 @@
+# arguments: location_condition
+
 # stop after max iterations
 execute if score #i dorklib.var > #max_iterations dorklib.var run return run function dorklib:impl/raycast/to_block/final_destination/main with storage dorklib:main functions."do:raycast/to_block"
 scoreboard players add #i dorklib.var 1
 
-# stop once not in air
-execute unless block ~ ~ ~ air run return run function dorklib:impl/raycast/to_block/final_destination/main with storage dorklib:main functions."do:raycast/to_block"
+# stop if block condition is satisfied
+$execute if predicate $(location_condition) run return run function dorklib:impl/raycast/to_block/final_destination/main with storage dorklib:main functions."do:raycast/to_block"
 
 # traverse voxel
 execute if score #d_x dorklib.var matches 0 run scoreboard players set #L_x dorklib.var 2147483647
