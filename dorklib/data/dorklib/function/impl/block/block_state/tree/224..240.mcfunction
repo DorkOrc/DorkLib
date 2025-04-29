@@ -1,0 +1,4 @@
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["cornflower","cracked_deepslate_bricks","cracked_deepslate_tiles","cracked_nether_bricks"]}}} run return run function dorklib:impl/block/block_state/tree/224..227
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["cracked_polished_blackstone_bricks","cracked_stone_bricks","crafter","crafting_table"]}}} run return run function dorklib:impl/block/block_state/tree/228..231
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["creaking_heart","creeper_head","creeper_wall_head","crimson_button"]}}} run return run function dorklib:impl/block/block_state/tree/232..235
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["crimson_door","crimson_fence","crimson_fence_gate","crimson_fungus","crimson_hanging_sign"]}}} run return run function dorklib:impl/block/block_state/tree/236..240

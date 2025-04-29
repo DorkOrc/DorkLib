@@ -1,0 +1,4 @@
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["sculk","sculk_catalyst","sculk_sensor","sculk_shrieker"]}}} run return run function dorklib:impl/block/block_state/tree/862..865
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["sculk_vein","sea_lantern","sea_pickle","seagrass"]}}} run return run function dorklib:impl/block/block_state/tree/866..869
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["short_dry_grass","short_grass","shroomlight","shulker_box"]}}} run return run function dorklib:impl/block/block_state/tree/870..873
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["skeleton_skull","skeleton_wall_skull","slime_block","small_amethyst_bud","small_dripleaf"]}}} run return run function dorklib:impl/block/block_state/tree/874..878

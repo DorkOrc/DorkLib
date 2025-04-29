@@ -1,0 +1,4 @@
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["infested_deepslate","infested_mossy_stone_bricks","infested_stone","infested_stone_bricks"]}}} run return run function dorklib:impl/block/block_state/tree/448..451
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["iron_bars","iron_block","iron_door","iron_ore"]}}} run return run function dorklib:impl/block/block_state/tree/452..455
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["iron_trapdoor","jack_o_lantern","jigsaw","jukebox"]}}} run return run function dorklib:impl/block/block_state/tree/456..459
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["jungle_button","jungle_door","jungle_fence","jungle_fence_gate","jungle_hanging_sign"]}}} run return run function dorklib:impl/block/block_state/tree/460..464

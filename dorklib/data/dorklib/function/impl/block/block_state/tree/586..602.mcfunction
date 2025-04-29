@@ -1,0 +1,4 @@
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["moving_piston","mud","mud_brick_slab","mud_brick_stairs"]}}} run return run function dorklib:impl/block/block_state/tree/586..589
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["mud_brick_wall","mud_bricks","muddy_mangrove_roots","mushroom_stem"]}}} run return run function dorklib:impl/block/block_state/tree/590..593
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["mycelium","nether_brick_fence","nether_brick_slab","nether_brick_stairs"]}}} run return run function dorklib:impl/block/block_state/tree/594..597
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["nether_brick_wall","nether_bricks","nether_gold_ore","nether_portal","nether_quartz_ore"]}}} run return run function dorklib:impl/block/block_state/tree/598..602

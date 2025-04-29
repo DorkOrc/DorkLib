@@ -276,3 +276,14 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 
   </details>
 </details>
+
+<details>
+  <summary><h2>Block Functions</h2></summary>
+
+  <details>
+  <summary><h3>Block State - <code>do:block/block_state</code></h3></summary>
+
+  Gets the `block_state` object of the block at that location.
+  > `-> compound`
+  </details>
+</details>

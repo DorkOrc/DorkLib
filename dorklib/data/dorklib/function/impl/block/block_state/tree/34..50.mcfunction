@@ -1,0 +1,4 @@
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["bamboo_block","bamboo_button","bamboo_door","bamboo_fence"]}}} run return run function dorklib:impl/block/block_state/tree/34..37
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["bamboo_fence_gate","bamboo_hanging_sign","bamboo_mosaic","bamboo_mosaic_slab"]}}} run return run function dorklib:impl/block/block_state/tree/38..41
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["bamboo_mosaic_stairs","bamboo_planks","bamboo_pressure_plate","bamboo_sapling"]}}} run return run function dorklib:impl/block/block_state/tree/42..45
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["bamboo_sign","bamboo_slab","bamboo_stairs","bamboo_trapdoor","bamboo_wall_hanging_sign"]}}} run return run function dorklib:impl/block/block_state/tree/46..50
