@@ -16,6 +16,7 @@ execute if score #valid_predicate dorklib.var matches 1 run data modify storage 
 
 # initialise vectors
 execute summon marker run function dorklib:impl/raycast/to_block/get_vectors
+scoreboard players set #edge_facing dorklib.var -1
 
 # set max distance
 scoreboard players set #exceeded_max_distance dorklib.var 0
