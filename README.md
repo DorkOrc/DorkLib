@@ -46,17 +46,17 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   Joins a list of strings together, returning a single string. Works with any arbitrary strings by escaping special characters as `"` (or `'`) and `\` before macro concatenation.
   > `(input: list[str, ...], separator: str = "") -> str`
   - `storage do:io input` is a list of strings. Any numerical types will be converted to strings. Any compound, list, or array types will be ignored.
-  - `storage do:io args.separator` (*Optional*) is a string. This will be inserted between each string in the inputted list. Omitting this field will not insert anything between the strings.
+  - `storage do:io args.separator` (*Optional*) is a string. This will be inserted between each string in the inputted list. Defaults to an empty string.
   </details>
 
   <details>
   <summary><h3>Split Strings - <code>do:str/split</code></h3></summary>
 
-  Splits a strings by some separator.
+  Splits a strings by some separator. (e.g. `"a.b.c"` with separator = `"."` -> `["a","b","c"]`)
   > `(input: str, separator: str, max_splits: int = 2147483647) -> list[str, ...]`
   - `storage do:io input` is a string.
   - `storage do:io args.separator` is a non-empty string.
-  - `storage do:io args.max_splits` (*Optional*) is a positive integer.
+  - `storage do:io args.max_splits` (*Optional*) is a positive integer. Defaults to the integer limit.
   </details>
 
   <details>
@@ -87,7 +87,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   <summary><h3>Get Characters (respecting surrogate pairs) - <code>do:str/chars</code></h3></summary>
 
   Gets a list of the characters in the string **without** splitting apart surrogate pairs.
-  > `(input: str) -> list[chr, ...]`
+  > `(input: str) -> list[str, ...]`
   - `storage do:io input` is a string.
   </details>
 
@@ -127,8 +127,8 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   <details>
   <summary><h3>Get the Items of a Compound - <code>do:compound/items</code></h3></summary>
 
-  Gets a list of the key-value pairs of the compound. Each element of the output list is a compounds with a "key" and "value" child. They, respectively, store the key and the value associated with that key in the input compound.
-  > `(input: compound) -> list[compound{key: str, value: Any}, ...]`
+  Gets a list of the key-value pairs of the compound. Each element of the output list is a compound with a `"key"` and `"value"` child. They, respectively, store the key and the value associated with that key in the input compound.
+  > `(input: compound) -> list[compound, ...]`
   - `storage do:io input` is a compound.
   </details>
 
@@ -155,7 +155,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   > `(input: compound, key: str, default: Any = None) -> Any`
   - `storage do:io input` is a compound.
   - `storage do:io args.key` is a string.
-  - `storage do:io args.default` (*Optional*) is a string.
+  - `storage do:io args.default` (*Optional*) is any value.
   </details>
 
   <details>
@@ -164,7 +164,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   Converts an NBT compound into a string containing its key-value pairs separated by equals signs and wrapped in square brackets. e.g. `{"minecraft:custom_name":"Bob"}` -> `[minecraft:custom_name="Bob"]`
   > `(input: Any) -> str`
   - `storage do:io input` is a compound of *component*:*value* pairs.
-  - `storage do:io args.predicates` (*Optional*) is a compound of *component*:*component-predicate* pairs. Each key-value pair gets inserted with `~` as the key-value separator instead of `=`.
+  - `storage do:io args.predicates` (*Optional*) is a compound of *component*:*component-predicate* pairs. Each key-value pair gets inserted with `~` as the key-value separator instead of `=`. *(Note to self: should change this to a list of compound items so that multiple predicates can be specified)*
   - `storage do:io args.components` (*Optional*) is a list of component IDs. Each component ID gets inserted without a paired value.
   </details>
 </details>
@@ -202,7 +202,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   Converts any NBT object into a string containing its JSON representation.
   > `(input: Any) -> str`
   - `storage do:io input` is any value.
-  - `storage do:io args.byte_as_boolean` (*Optional*) is a boolean. If true, 0b and 1b will be written as false and true respectively.
+  - `storage do:io args.byte_as_boolean` (*Optional*) is a boolean. If true, `0b` and `1b` will be written as `false` and `true` respectively.
   </details>
 </details>
 
@@ -218,8 +218,8 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   > `(function: str, require_hit: bool = False, max_distance: num = 64) -> None`
   - `storage do:io args.function` is a string containing a function ID.
   - `storage do:io args.require_hit` (*Optional*) is a boolean. If true, the function will only run if the ray hits a block. Defaults to *false*.
-  - `storage do:io args.max_distance` (*Optional*) is a positive number. Specifies the maximum distance that the ray can travel before stopping. Defaults to *64*.
-  - `storage do:io args.location_condition` (*Optional*) is a predicate ID or inlined predicate. The condition for what blocks/fluids cam be hit. The predicate is ran at the centre of each block that the ray intersects with. Defaults to *any block that is not air, cave_air, or void_air*.
+  - `storage do:io args.max_distance` (*Optional*) is a positive number. Specifies the maximum distance that the ray can travel before stopping. Defaults to *64* blocks.
+  - `storage do:io args.location_condition` (*Optional*) is a predicate ID or inlined predicate. The condition for what blocks/fluids can be hit. The predicate is ran at the centre of each block that the ray intersects with. Defaults to *any block that is not air, cave_air, or void_air*.
   </details>
 
   <details>
@@ -230,7 +230,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io args.function` is a string containing a function ID.
   - `storage do:io args.require_hit` (*Optional*) is a boolean. If true, the function will only run if the ray hits a block. Defaults to *false*.
   - `storage do:io args.max_distance` (*Optional*) is a positive number. Specifies the maximum distance that the ray can travel before stopping. Defaults to *64*.
-  - `storage do:io args.location_condition` (*Optional*) is a predicate ID or inlined predicate. The condition for what blocks/fluids cam be hit. The predicate is ran at the centre of each block that the ray intersects with. Defaults to *any block that is not air, cave_air, or void_air*.
+  - `storage do:io args.location_condition` (*Optional*) is a predicate ID or inlined predicate. The condition for what blocks/fluids can be hit. The predicate is ran at the centre of each block that the ray intersects with. Defaults to *any block that is not air, cave_air, or void_air*.
   </details>
 
   <details>
@@ -241,7 +241,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io args.function` is a string containing a function ID.
   - `storage do:io args.require_hit` (*Optional*) is a boolean. If true, the function will only run if the ray hits a block. Defaults to *false*.
   - `storage do:io args.max_distance` (*Optional*) is a positive number. Specifies the maximum distance that the ray can travel before stopping. Defaults to *64*.
-  - `storage do:io args.location_condition` (*Optional*) is a predicate ID or inlined predicate. The condition for what blocks/fluids cam be hit. The predicate is ran at the centre of each block that the ray intersects with. Defaults to *any block that is not air, cave_air, or void_air*.
+  - `storage do:io args.location_condition` (*Optional*) is a predicate ID or inlined predicate. The condition for what blocks/fluids can be hit. The predicate is ran at the centre of each block that the ray intersects with. Defaults to *any block that is not air, cave_air, or void_air*.
   </details>
 </details>
 
@@ -261,13 +261,14 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 
   <details>
-  <summary><h3>Summon Passenger - <code>function do:summon/passenger {id, nbt, function}</code></h3></summary>
+  <summary><h3>Summon Passenger - <code>function do:summon/passenger</code></h3></summary>
 
   Summons an entity which immediately mounts the executing entity, and then optionally runs a function.
   > `(input: str|None, id: str|None = None, nbt: compound|None = None, function: str|None = None) -> str`
-  - `id` (*Required when Inlined*) is an entity type ID. Overrides the `input`.
-  - `nbt` (*Optional*) is an NBT compound of tags to summon the entity with. If specified, the entity is summoned with that data directly. If omitted, the entity is summoned with default randomness. `UUID` and `Pos` tags are ignored.
-  - `function` (*Optional*) is a function ID (without macro arguments) to run as the entity immediately after it mounts its vehicle. If omitted, no function is ran.
+  - `storage do:io input` (*Optional if `args.id` is specified*) is an entity type ID.
+  - `storage do:io args.id` (*Optional if `input` is specified*) is an entity type ID. Overrides the `input`.
+  - `storage do:io args.nbt` (*Optional*) is an NBT compound of tags to summon the entity with. If specified, the entity is summoned with that data directly. If omitted, the entity is summoned with default randomness. `UUID` and `Pos` tags are ignored.
+  - `storage do:io args.function` (*Optional*) is a function ID (without macro arguments) to run as the entity immediately after it mounts its vehicle. If omitted, no function is ran.
 
   e.g.
   ```
