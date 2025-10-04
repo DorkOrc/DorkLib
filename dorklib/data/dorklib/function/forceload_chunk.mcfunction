@@ -7,4 +7,5 @@ execute in minecraft:overworld run setblock -30000000 0 1602 yellow_shulker_box 
 execute in minecraft:overworld run setblock -30000000 0 1604 test_block[mode=log]{mode:"log"} strict
 
 # call post-chunk-load functions
-execute in minecraft:overworld positioned -30000000 0 1600 run function #do:chunk_load
+execute in minecraft:overworld positioned -30000000 0 1600 run function #do:pre_load
+function #do:load
