@@ -1,0 +1,4 @@
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["warped_planks","warped_pressure_plate","warped_roots","warped_shelf"]}}} run return run function dorklib:impl/do/block/block_state/tree/1038..1041
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["warped_sign","warped_slab","warped_stairs","warped_stem","warped_trapdoor"]}}} run return run function dorklib:impl/do/block/block_state/tree/1042..1046
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["warped_wall_hanging_sign","warped_wall_sign","warped_wart_block","water"]}}} run return run function dorklib:impl/do/block/block_state/tree/1047..1050
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["water_cauldron","waxed_chiseled_copper","waxed_copper_bars","waxed_copper_block","waxed_copper_bulb"]}}} run return run function dorklib:impl/do/block/block_state/tree/1051..1055

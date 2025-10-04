@@ -1,0 +1,4 @@
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["birch_planks","birch_pressure_plate","birch_sapling","birch_shelf"]}}} run return run function dorklib:impl/do/block/block_state/tree/72..75
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["birch_sign","birch_slab","birch_stairs","birch_trapdoor","birch_wall_hanging_sign"]}}} run return run function dorklib:impl/do/block/block_state/tree/76..80
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["birch_wall_sign","birch_wood","black_banner","black_bed"]}}} run return run function dorklib:impl/do/block/block_state/tree/81..84
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["black_candle","black_candle_cake","black_carpet","black_concrete","black_concrete_powder"]}}} run return run function dorklib:impl/do/block/block_state/tree/85..89

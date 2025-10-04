@@ -4,6 +4,6 @@
 execute unless function dorklib:io/init run return fail
 
 data modify storage dorklib:main functions."do:str/escape" set value {}
-execute store success score #success dorklib.var store result score #result dorklib.var run function dorklib:impl/str/escape/double_quote
+execute store success score #success dorklib.var store result score #result dorklib.var run function dorklib:impl/do/str/escape/double_quote
 
 return run function dorklib:io/post

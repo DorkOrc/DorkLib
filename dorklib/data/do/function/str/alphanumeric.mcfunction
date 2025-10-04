@@ -4,6 +4,6 @@
 execute unless function dorklib:io/init run return fail
 
 data modify storage dorklib:main functions."do:str/split" set value {}
-execute store success score #success dorklib.var store result score #result dorklib.var run function dorklib:impl/str/alphanumeric/main
+execute store success score #success dorklib.var store result score #result dorklib.var run function dorklib:impl/do/str/alphanumeric/main
 
 return run function dorklib:io/post

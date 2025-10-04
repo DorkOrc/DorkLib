@@ -1,0 +1,4 @@
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["repeater","repeating_command_block","resin_block","resin_brick_slab"]}}} run return run function dorklib:impl/do/block/block_state/tree/874..877
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["resin_brick_stairs","resin_brick_wall","resin_bricks","resin_clump","respawn_anchor"]}}} run return run function dorklib:impl/do/block/block_state/tree/878..882
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["rooted_dirt","rose_bush","sand","sandstone"]}}} run return run function dorklib:impl/do/block/block_state/tree/883..886
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["sandstone_slab","sandstone_stairs","sandstone_wall","scaffolding","sculk"]}}} run return run function dorklib:impl/do/block/block_state/tree/887..891

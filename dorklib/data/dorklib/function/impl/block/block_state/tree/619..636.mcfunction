@@ -1,4 +1,0 @@
-execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["nether_brick_wall","nether_bricks","nether_gold_ore","nether_portal"]}}} run return run function dorklib:impl/block/block_state/tree/619..622
-execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["nether_quartz_ore","nether_sprouts","nether_wart","nether_wart_block","netherite_block"]}}} run return run function dorklib:impl/block/block_state/tree/623..627
-execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["netherrack","note_block","oak_button","oak_door"]}}} run return run function dorklib:impl/block/block_state/tree/628..631
-execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["oak_fence","oak_fence_gate","oak_hanging_sign","oak_leaves","oak_log"]}}} run return run function dorklib:impl/block/block_state/tree/632..636
