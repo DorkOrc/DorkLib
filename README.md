@@ -288,3 +288,56 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   > `-> compound`
   </details>
 </details>
+
+<details>
+  <summary><h2>Dynamic Functions API</h2></summary>
+
+  <details>
+  <summary><h3>Creates a Dynamic Function - <code>do:dynamic_function/add</code></h3></summary>
+
+  Registers a dynamic function.
+  > `(id: str, commands_per_entry: int) -> None`
+  - `storage do:io args.id` is a namespaced ID.
+  - `storage do:io args.commands_per_entry` Specifies the number of grouped commands per entry. Minimum 1, maximum 4. Influences the maximum number of entries for that dynamic function (= 1024//commands_per_entry).
+
+  </details>
+
+  <details>
+  <summary><h3>Remove a Dynamic Function - <code>do:dynamic_function/remove</code></h3></summary>
+
+  Deletes a dynamic function from the registry.
+  > `(id: str) -> None`
+  - `storage do:io args.id` is a namespaced ID.
+
+  </details>
+
+  <details>
+  <summary><h3>Run a Dynamic Function - <code>do:dynamic_function/run</code></h3></summary>
+
+  Runs a dynamic function.
+  > `(id: str) -> None`
+  - `storage do:io args.id` is a namespaced ID.
+
+  </details>
+
+  <details>
+  <summary><h3>Add an entry to a Dynamic Function - <code>do:dynamic_function/modify/add_entry</code></h3></summary>
+
+  Runs a dynamic function.
+  > `(id: str, name: str|int, commands: list[str, ...]) -> None`
+  - `storage do:io args.id` is a namespaced ID.
+  - `storage do:io args.name` is a lowercase alphanumeric identifier (namespaced ID but without the namespace). There must not already be an entry with this name in the dynamic function.
+  - `storage do:io args.commands` is a list of strings containing commands. The number of commands in the list must be equal to the commands_per_entry of the dynamic function. The commands must be parseable with the current function-permission-level.
+
+  </details>
+
+  <details>
+  <summary><h3>Remove an entry from a Dynamic Function - <code>do:dynamic_function/modify/remove_entry</code></h3></summary>
+
+  Runs a dynamic function.
+  > `(id: str, name: str|int) -> None`
+  - `storage do:io args.id` is a namespaced ID.
+  - `storage do:io args.name` is a lowercase alphanumeric identifier (namespaced ID but without the namespace).
+
+  </details>
+</details>
