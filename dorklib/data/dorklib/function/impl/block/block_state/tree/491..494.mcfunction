@@ -1,4 +1,4 @@
-execute if block ~ ~ ~ minecraft:light_blue_banner run return run function dorklib:impl/block/block_state/tree/light_blue_banner
-execute if block ~ ~ ~ minecraft:light_blue_bed run return run function dorklib:impl/block/block_state/tree/light_blue_bed
-execute if block ~ ~ ~ minecraft:light_blue_candle run return run function dorklib:impl/block/block_state/tree/light_blue_candle
-execute if block ~ ~ ~ minecraft:light_blue_candle_cake run return run function dorklib:impl/block/block_state/tree/light_blue_candle_cake
+execute if block ~ ~ ~ minecraft:jungle_slab run return run function dorklib:impl/block/block_state/tree/jungle_slab
+execute if block ~ ~ ~ minecraft:jungle_stairs run return run function dorklib:impl/block/block_state/tree/jungle_stairs
+execute if block ~ ~ ~ minecraft:jungle_trapdoor run return run function dorklib:impl/block/block_state/tree/jungle_trapdoor
+execute if block ~ ~ ~ minecraft:jungle_wall_hanging_sign run return run function dorklib:impl/block/block_state/tree/jungle_wall_hanging_sign

@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:deepslate_brick_stairs",Properties:{"facing": "north", "half": "bottom", "shape": "straight", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:deepslate_brick_stairs",Properties:{facing:"north",half:"bottom",shape:"straight",waterlogged:"false"}}
 execute if block ~ ~ ~ deepslate_brick_stairs[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ deepslate_brick_stairs[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ deepslate_brick_stairs[facing=east] run data modify storage do:io output.Properties.facing set value "east"

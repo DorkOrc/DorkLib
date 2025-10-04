@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:skeleton_skull",Properties:{"powered": "false", "rotation": "0"}}
+data modify storage do:io output set value {Name:"minecraft:skeleton_skull",Properties:{powered:"false",rotation:"0"}}
 execute if block ~ ~ ~ skeleton_skull[powered=true] run data modify storage do:io output.Properties.powered set value "true"
 execute if block ~ ~ ~ skeleton_skull[rotation=1] run data modify storage do:io output.Properties.rotation set value "1"
 execute if block ~ ~ ~ skeleton_skull[rotation=2] run data modify storage do:io output.Properties.rotation set value "2"

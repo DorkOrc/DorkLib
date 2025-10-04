@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:jigsaw",Properties:{"orientation": "north_up"}}
+data modify storage do:io output set value {Name:"minecraft:jigsaw",Properties:{orientation:"north_up"}}
 execute if block ~ ~ ~ jigsaw[orientation=down_east] run data modify storage do:io output.Properties.orientation set value "down_east"
 execute if block ~ ~ ~ jigsaw[orientation=down_north] run data modify storage do:io output.Properties.orientation set value "down_north"
 execute if block ~ ~ ~ jigsaw[orientation=down_south] run data modify storage do:io output.Properties.orientation set value "down_south"

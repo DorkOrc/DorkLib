@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:bell",Properties:{"attachment": "floor", "facing": "north", "powered": "false"}}
+data modify storage do:io output set value {Name:"minecraft:bell",Properties:{attachment:"floor",facing:"north",powered:"false"}}
 execute if block ~ ~ ~ bell[attachment=ceiling] run data modify storage do:io output.Properties.attachment set value "ceiling"
 execute if block ~ ~ ~ bell[attachment=single_wall] run data modify storage do:io output.Properties.attachment set value "single_wall"
 execute if block ~ ~ ~ bell[attachment=double_wall] run data modify storage do:io output.Properties.attachment set value "double_wall"

@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:scaffolding",Properties:{"bottom": "false", "distance": "7", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:scaffolding",Properties:{bottom:"false",distance:"7",waterlogged:"false"}}
 execute if block ~ ~ ~ scaffolding[bottom=true] run data modify storage do:io output.Properties.bottom set value "true"
 execute if block ~ ~ ~ scaffolding[distance=0] run data modify storage do:io output.Properties.distance set value "0"
 execute if block ~ ~ ~ scaffolding[distance=1] run data modify storage do:io output.Properties.distance set value "1"

@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:cave_vines",Properties:{"age": "0", "berries": "false"}}
+data modify storage do:io output set value {Name:"minecraft:cave_vines",Properties:{age:"0",berries:"false"}}
 execute if block ~ ~ ~ cave_vines[age=1] run data modify storage do:io output.Properties.age set value "1"
 execute if block ~ ~ ~ cave_vines[age=2] run data modify storage do:io output.Properties.age set value "2"
 execute if block ~ ~ ~ cave_vines[age=3] run data modify storage do:io output.Properties.age set value "3"

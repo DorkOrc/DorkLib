@@ -1,4 +1,0 @@
-execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["magenta_wall_banner","magenta_wool","magma_block","mangrove_button"]}}} run return run function dorklib:impl/block/block_state/tree/552..555
-execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["mangrove_door","mangrove_fence","mangrove_fence_gate","mangrove_hanging_sign"]}}} run return run function dorklib:impl/block/block_state/tree/556..559
-execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["mangrove_leaves","mangrove_log","mangrove_planks","mangrove_pressure_plate"]}}} run return run function dorklib:impl/block/block_state/tree/560..563
-execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["mangrove_propagule","mangrove_roots","mangrove_sign","mangrove_slab","mangrove_stairs"]}}} run return run function dorklib:impl/block/block_state/tree/564..568

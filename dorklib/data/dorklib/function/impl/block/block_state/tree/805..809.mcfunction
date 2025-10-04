@@ -1,5 +1,5 @@
-execute if block ~ ~ ~ minecraft:quartz_pillar run return run function dorklib:impl/block/block_state/tree/quartz_pillar
-execute if block ~ ~ ~ minecraft:quartz_slab run return run function dorklib:impl/block/block_state/tree/quartz_slab
-execute if block ~ ~ ~ minecraft:quartz_stairs run return run function dorklib:impl/block/block_state/tree/quartz_stairs
-execute if block ~ ~ ~ minecraft:rail run return run function dorklib:impl/block/block_state/tree/rail
-execute if block ~ ~ ~ minecraft:raw_copper_block run return run data modify storage do:io output set value {Name:"minecraft:raw_copper_block"}
+execute if block ~ ~ ~ minecraft:prismarine run return run data modify storage do:io output set value {Name:"minecraft:prismarine"}
+execute if block ~ ~ ~ minecraft:prismarine_brick_slab run return run function dorklib:impl/block/block_state/tree/prismarine_brick_slab
+execute if block ~ ~ ~ minecraft:prismarine_brick_stairs run return run function dorklib:impl/block/block_state/tree/prismarine_brick_stairs
+execute if block ~ ~ ~ minecraft:prismarine_bricks run return run data modify storage do:io output set value {Name:"minecraft:prismarine_bricks"}
+execute if block ~ ~ ~ minecraft:prismarine_slab run return run function dorklib:impl/block/block_state/tree/prismarine_slab

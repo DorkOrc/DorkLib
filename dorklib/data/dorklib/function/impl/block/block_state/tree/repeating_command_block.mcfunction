@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:repeating_command_block",Properties:{"conditional": "false", "facing": "north"}}
+data modify storage do:io output set value {Name:"minecraft:repeating_command_block",Properties:{conditional:"false",facing:"north"}}
 execute if block ~ ~ ~ repeating_command_block[conditional=true] run data modify storage do:io output.Properties.conditional set value "true"
 execute if block ~ ~ ~ repeating_command_block[facing=east] run data modify storage do:io output.Properties.facing set value "east"
 execute if block ~ ~ ~ repeating_command_block[facing=south] run data modify storage do:io output.Properties.facing set value "south"

@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:dispenser",Properties:{"facing": "north", "triggered": "false"}}
+data modify storage do:io output set value {Name:"minecraft:dispenser",Properties:{facing:"north",triggered:"false"}}
 execute if block ~ ~ ~ dispenser[facing=east] run data modify storage do:io output.Properties.facing set value "east"
 execute if block ~ ~ ~ dispenser[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ dispenser[facing=west] run data modify storage do:io output.Properties.facing set value "west"

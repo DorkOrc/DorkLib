@@ -1,0 +1,4 @@
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["fire_coral_wall_fan","firefly_bush","fletching_table","flower_pot"]}}} run return run function dorklib:impl/block/block_state/tree/400..403
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["flowering_azalea","flowering_azalea_leaves","frogspawn","frosted_ice","furnace"]}}} run return run function dorklib:impl/block/block_state/tree/404..408
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["gilded_blackstone","glass","glass_pane","glow_lichen"]}}} run return run function dorklib:impl/block/block_state/tree/409..412
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["glowstone","gold_block","gold_ore","granite","granite_slab"]}}} run return run function dorklib:impl/block/block_state/tree/413..417

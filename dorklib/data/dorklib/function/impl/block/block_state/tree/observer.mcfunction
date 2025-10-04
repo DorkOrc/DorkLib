@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:observer",Properties:{"facing": "south", "powered": "false"}}
+data modify storage do:io output set value {Name:"minecraft:observer",Properties:{facing:"south",powered:"false"}}
 execute if block ~ ~ ~ observer[facing=north] run data modify storage do:io output.Properties.facing set value "north"
 execute if block ~ ~ ~ observer[facing=east] run data modify storage do:io output.Properties.facing set value "east"
 execute if block ~ ~ ~ observer[facing=west] run data modify storage do:io output.Properties.facing set value "west"

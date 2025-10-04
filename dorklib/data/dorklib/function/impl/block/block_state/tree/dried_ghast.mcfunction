@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:dried_ghast",Properties:{"facing": "north", "hydration": "0", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:dried_ghast",Properties:{facing:"north",hydration:"0",waterlogged:"false"}}
 execute if block ~ ~ ~ dried_ghast[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ dried_ghast[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ dried_ghast[facing=east] run data modify storage do:io output.Properties.facing set value "east"

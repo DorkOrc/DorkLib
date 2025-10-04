@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:daylight_detector",Properties:{"inverted": "false", "power": "0"}}
+data modify storage do:io output set value {Name:"minecraft:daylight_detector",Properties:{inverted:"false",power:"0"}}
 execute if block ~ ~ ~ daylight_detector[inverted=true] run data modify storage do:io output.Properties.inverted set value "true"
 execute if block ~ ~ ~ daylight_detector[power=1] run data modify storage do:io output.Properties.power set value "1"
 execute if block ~ ~ ~ daylight_detector[power=2] run data modify storage do:io output.Properties.power set value "2"

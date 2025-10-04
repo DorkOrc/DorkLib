@@ -1,4 +1,4 @@
-execute if block ~ ~ ~ minecraft:white_carpet run return run data modify storage do:io output set value {Name:"minecraft:white_carpet"}
-execute if block ~ ~ ~ minecraft:white_concrete run return run data modify storage do:io output set value {Name:"minecraft:white_concrete"}
-execute if block ~ ~ ~ minecraft:white_concrete_powder run return run data modify storage do:io output set value {Name:"minecraft:white_concrete_powder"}
-execute if block ~ ~ ~ minecraft:white_glazed_terracotta run return run function dorklib:impl/block/block_state/tree/white_glazed_terracotta
+execute if block ~ ~ ~ minecraft:waxed_exposed_copper_grate run return run function dorklib:impl/block/block_state/tree/waxed_exposed_copper_grate
+execute if block ~ ~ ~ minecraft:waxed_exposed_copper_lantern run return run function dorklib:impl/block/block_state/tree/waxed_exposed_copper_lantern
+execute if block ~ ~ ~ minecraft:waxed_exposed_copper_trapdoor run return run function dorklib:impl/block/block_state/tree/waxed_exposed_copper_trapdoor
+execute if block ~ ~ ~ minecraft:waxed_exposed_cut_copper run return run data modify storage do:io output set value {Name:"minecraft:waxed_exposed_cut_copper"}

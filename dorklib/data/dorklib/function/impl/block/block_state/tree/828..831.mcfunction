@@ -1,4 +1,4 @@
-execute if block ~ ~ ~ minecraft:red_sandstone_slab run return run function dorklib:impl/block/block_state/tree/red_sandstone_slab
-execute if block ~ ~ ~ minecraft:red_sandstone_stairs run return run function dorklib:impl/block/block_state/tree/red_sandstone_stairs
-execute if block ~ ~ ~ minecraft:red_sandstone_wall run return run function dorklib:impl/block/block_state/tree/red_sandstone_wall
-execute if block ~ ~ ~ minecraft:red_shulker_box run return run function dorklib:impl/block/block_state/tree/red_shulker_box
+execute if block ~ ~ ~ minecraft:purpur_block run return run data modify storage do:io output set value {Name:"minecraft:purpur_block"}
+execute if block ~ ~ ~ minecraft:purpur_pillar run return run function dorklib:impl/block/block_state/tree/purpur_pillar
+execute if block ~ ~ ~ minecraft:purpur_slab run return run function dorklib:impl/block/block_state/tree/purpur_slab
+execute if block ~ ~ ~ minecraft:purpur_stairs run return run function dorklib:impl/block/block_state/tree/purpur_stairs

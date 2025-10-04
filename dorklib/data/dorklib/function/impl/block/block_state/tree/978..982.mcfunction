@@ -1,5 +1,5 @@
-execute if block ~ ~ ~ minecraft:tripwire run return run function dorklib:impl/block/block_state/tree/tripwire
-execute if block ~ ~ ~ minecraft:tripwire_hook run return run function dorklib:impl/block/block_state/tree/tripwire_hook
-execute if block ~ ~ ~ minecraft:tube_coral run return run function dorklib:impl/block/block_state/tree/tube_coral
-execute if block ~ ~ ~ minecraft:tube_coral_block run return run data modify storage do:io output set value {Name:"minecraft:tube_coral_block"}
-execute if block ~ ~ ~ minecraft:tube_coral_fan run return run function dorklib:impl/block/block_state/tree/tube_coral_fan
+execute if block ~ ~ ~ minecraft:stripped_mangrove_wood run return run function dorklib:impl/block/block_state/tree/stripped_mangrove_wood
+execute if block ~ ~ ~ minecraft:stripped_oak_log run return run function dorklib:impl/block/block_state/tree/stripped_oak_log
+execute if block ~ ~ ~ minecraft:stripped_oak_wood run return run function dorklib:impl/block/block_state/tree/stripped_oak_wood
+execute if block ~ ~ ~ minecraft:stripped_pale_oak_log run return run function dorklib:impl/block/block_state/tree/stripped_pale_oak_log
+execute if block ~ ~ ~ minecraft:stripped_pale_oak_wood run return run function dorklib:impl/block/block_state/tree/stripped_pale_oak_wood

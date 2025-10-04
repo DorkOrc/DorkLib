@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:glow_lichen",Properties:{"down": "false", "east": "false", "north": "false", "south": "false", "up": "false", "waterlogged": "false", "west": "false"}}
+data modify storage do:io output set value {Name:"minecraft:glow_lichen",Properties:{down:"false",east:"false",north:"false",south:"false",up:"false",waterlogged:"false",west:"false"}}
 execute if block ~ ~ ~ glow_lichen[down=true] run data modify storage do:io output.Properties.down set value "true"
 execute if block ~ ~ ~ glow_lichen[east=true] run data modify storage do:io output.Properties.east set value "true"
 execute if block ~ ~ ~ glow_lichen[north=true] run data modify storage do:io output.Properties.north set value "true"

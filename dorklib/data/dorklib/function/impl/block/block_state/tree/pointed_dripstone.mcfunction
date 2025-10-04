@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:pointed_dripstone",Properties:{"thickness": "tip", "vertical_direction": "up", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:pointed_dripstone",Properties:{thickness:"tip",vertical_direction:"up",waterlogged:"false"}}
 execute if block ~ ~ ~ pointed_dripstone[thickness=tip_merge] run data modify storage do:io output.Properties.thickness set value "tip_merge"
 execute if block ~ ~ ~ pointed_dripstone[thickness=frustum] run data modify storage do:io output.Properties.thickness set value "frustum"
 execute if block ~ ~ ~ pointed_dripstone[thickness=middle] run data modify storage do:io output.Properties.thickness set value "middle"

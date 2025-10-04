@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:light",Properties:{"level": "15", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:light",Properties:{level:"15",waterlogged:"false"}}
 execute if block ~ ~ ~ light[level=0] run data modify storage do:io output.Properties.level set value "0"
 execute if block ~ ~ ~ light[level=1] run data modify storage do:io output.Properties.level set value "1"
 execute if block ~ ~ ~ light[level=2] run data modify storage do:io output.Properties.level set value "2"

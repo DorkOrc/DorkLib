@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:red_shulker_box",Properties:{"facing": "up"}}
+data modify storage do:io output set value {Name:"minecraft:red_shulker_box",Properties:{facing:"up"}}
 execute if block ~ ~ ~ red_shulker_box[facing=north] run data modify storage do:io output.Properties.facing set value "north"
 execute if block ~ ~ ~ red_shulker_box[facing=east] run data modify storage do:io output.Properties.facing set value "east"
 execute if block ~ ~ ~ red_shulker_box[facing=south] run data modify storage do:io output.Properties.facing set value "south"

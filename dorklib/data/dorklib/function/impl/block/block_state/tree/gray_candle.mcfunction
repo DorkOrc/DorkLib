@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:gray_candle",Properties:{"candles": "1", "lit": "false", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:gray_candle",Properties:{candles:"1",lit:"false",waterlogged:"false"}}
 execute if block ~ ~ ~ gray_candle[candles=2] run data modify storage do:io output.Properties.candles set value "2"
 execute if block ~ ~ ~ gray_candle[candles=3] run data modify storage do:io output.Properties.candles set value "3"
 execute if block ~ ~ ~ gray_candle[candles=4] run data modify storage do:io output.Properties.candles set value "4"

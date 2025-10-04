@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:resin_brick_wall",Properties:{"east": "none", "north": "none", "south": "none", "up": "true", "waterlogged": "false", "west": "none"}}
+data modify storage do:io output set value {Name:"minecraft:resin_brick_wall",Properties:{east:"none",north:"none",south:"none",up:"true",waterlogged:"false",west:"none"}}
 execute if block ~ ~ ~ resin_brick_wall[east=low] run data modify storage do:io output.Properties.east set value "low"
 execute if block ~ ~ ~ resin_brick_wall[east=tall] run data modify storage do:io output.Properties.east set value "tall"
 execute if block ~ ~ ~ resin_brick_wall[north=low] run data modify storage do:io output.Properties.north set value "low"

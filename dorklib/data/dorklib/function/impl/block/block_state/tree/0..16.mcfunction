@@ -1,4 +1,0 @@
-execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["acacia_button","acacia_door","acacia_fence","acacia_fence_gate"]}}} run return run function dorklib:impl/block/block_state/tree/0..3
-execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["acacia_hanging_sign","acacia_leaves","acacia_log","acacia_planks"]}}} run return run function dorklib:impl/block/block_state/tree/4..7
-execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["acacia_pressure_plate","acacia_sapling","acacia_sign","acacia_slab"]}}} run return run function dorklib:impl/block/block_state/tree/8..11
-execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["acacia_stairs","acacia_trapdoor","acacia_wall_hanging_sign","acacia_wall_sign","acacia_wood"]}}} run return run function dorklib:impl/block/block_state/tree/12..16

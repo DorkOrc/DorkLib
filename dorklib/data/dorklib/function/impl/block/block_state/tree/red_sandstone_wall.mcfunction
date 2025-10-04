@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:red_sandstone_wall",Properties:{"east": "none", "north": "none", "south": "none", "up": "true", "waterlogged": "false", "west": "none"}}
+data modify storage do:io output set value {Name:"minecraft:red_sandstone_wall",Properties:{east:"none",north:"none",south:"none",up:"true",waterlogged:"false",west:"none"}}
 execute if block ~ ~ ~ red_sandstone_wall[east=low] run data modify storage do:io output.Properties.east set value "low"
 execute if block ~ ~ ~ red_sandstone_wall[east=tall] run data modify storage do:io output.Properties.east set value "tall"
 execute if block ~ ~ ~ red_sandstone_wall[north=low] run data modify storage do:io output.Properties.north set value "low"

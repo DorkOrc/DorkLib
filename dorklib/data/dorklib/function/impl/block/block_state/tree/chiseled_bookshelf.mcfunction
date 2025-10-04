@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:chiseled_bookshelf",Properties:{"facing": "north", "slot_0_occupied": "false", "slot_1_occupied": "false", "slot_2_occupied": "false", "slot_3_occupied": "false", "slot_4_occupied": "false", "slot_5_occupied": "false"}}
+data modify storage do:io output set value {Name:"minecraft:chiseled_bookshelf",Properties:{facing:"north",slot_0_occupied:"false",slot_1_occupied:"false",slot_2_occupied:"false",slot_3_occupied:"false",slot_4_occupied:"false",slot_5_occupied:"false"}}
 execute if block ~ ~ ~ chiseled_bookshelf[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ chiseled_bookshelf[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ chiseled_bookshelf[facing=east] run data modify storage do:io output.Properties.facing set value "east"

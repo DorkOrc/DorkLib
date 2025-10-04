@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:orange_bed",Properties:{"facing": "north", "occupied": "false", "part": "foot"}}
+data modify storage do:io output set value {Name:"minecraft:orange_bed",Properties:{facing:"north",occupied:"false",part:"foot"}}
 execute if block ~ ~ ~ orange_bed[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ orange_bed[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ orange_bed[facing=east] run data modify storage do:io output.Properties.facing set value "east"

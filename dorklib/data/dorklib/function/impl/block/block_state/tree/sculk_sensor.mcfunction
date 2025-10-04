@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:sculk_sensor",Properties:{"power": "0", "sculk_sensor_phase": "inactive", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:sculk_sensor",Properties:{power:"0",sculk_sensor_phase:"inactive",waterlogged:"false"}}
 execute if block ~ ~ ~ sculk_sensor[power=1] run data modify storage do:io output.Properties.power set value "1"
 execute if block ~ ~ ~ sculk_sensor[power=2] run data modify storage do:io output.Properties.power set value "2"
 execute if block ~ ~ ~ sculk_sensor[power=3] run data modify storage do:io output.Properties.power set value "3"

@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:cake",Properties:{"bites": "0"}}
+data modify storage do:io output set value {Name:"minecraft:cake",Properties:{bites:"0"}}
 execute if block ~ ~ ~ cake[bites=1] run data modify storage do:io output.Properties.bites set value "1"
 execute if block ~ ~ ~ cake[bites=2] run data modify storage do:io output.Properties.bites set value "2"
 execute if block ~ ~ ~ cake[bites=3] run data modify storage do:io output.Properties.bites set value "3"

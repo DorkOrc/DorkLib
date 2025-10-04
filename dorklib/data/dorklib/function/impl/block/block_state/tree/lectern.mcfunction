@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:lectern",Properties:{"facing": "north", "has_book": "false", "powered": "false"}}
+data modify storage do:io output set value {Name:"minecraft:lectern",Properties:{facing:"north",has_book:"false",powered:"false"}}
 execute if block ~ ~ ~ lectern[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ lectern[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ lectern[facing=east] run data modify storage do:io output.Properties.facing set value "east"

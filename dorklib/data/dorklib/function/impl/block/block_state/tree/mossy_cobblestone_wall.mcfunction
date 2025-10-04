@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:mossy_cobblestone_wall",Properties:{"east": "none", "north": "none", "south": "none", "up": "true", "waterlogged": "false", "west": "none"}}
+data modify storage do:io output set value {Name:"minecraft:mossy_cobblestone_wall",Properties:{east:"none",north:"none",south:"none",up:"true",waterlogged:"false",west:"none"}}
 execute if block ~ ~ ~ mossy_cobblestone_wall[east=low] run data modify storage do:io output.Properties.east set value "low"
 execute if block ~ ~ ~ mossy_cobblestone_wall[east=tall] run data modify storage do:io output.Properties.east set value "tall"
 execute if block ~ ~ ~ mossy_cobblestone_wall[north=low] run data modify storage do:io output.Properties.north set value "low"

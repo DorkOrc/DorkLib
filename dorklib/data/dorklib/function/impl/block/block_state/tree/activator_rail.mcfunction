@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:activator_rail",Properties:{"powered": "false", "shape": "north_south", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:activator_rail",Properties:{powered:"false",shape:"north_south",waterlogged:"false"}}
 execute if block ~ ~ ~ activator_rail[powered=true] run data modify storage do:io output.Properties.powered set value "true"
 execute if block ~ ~ ~ activator_rail[shape=east_west] run data modify storage do:io output.Properties.shape set value "east_west"
 execute if block ~ ~ ~ activator_rail[shape=ascending_east] run data modify storage do:io output.Properties.shape set value "ascending_east"

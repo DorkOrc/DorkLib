@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:crimson_wall_hanging_sign",Properties:{"facing": "north", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:crimson_wall_hanging_sign",Properties:{facing:"north",waterlogged:"false"}}
 execute if block ~ ~ ~ crimson_wall_hanging_sign[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ crimson_wall_hanging_sign[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ crimson_wall_hanging_sign[facing=east] run data modify storage do:io output.Properties.facing set value "east"

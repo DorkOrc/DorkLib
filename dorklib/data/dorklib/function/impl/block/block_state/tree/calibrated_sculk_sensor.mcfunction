@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:calibrated_sculk_sensor",Properties:{"facing": "north", "power": "0", "sculk_sensor_phase": "inactive", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:calibrated_sculk_sensor",Properties:{facing:"north",power:"0",sculk_sensor_phase:"inactive",waterlogged:"false"}}
 execute if block ~ ~ ~ calibrated_sculk_sensor[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ calibrated_sculk_sensor[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ calibrated_sculk_sensor[facing=east] run data modify storage do:io output.Properties.facing set value "east"

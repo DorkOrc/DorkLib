@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:dark_oak_sign",Properties:{"rotation": "0", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:dark_oak_sign",Properties:{rotation:"0",waterlogged:"false"}}
 execute if block ~ ~ ~ dark_oak_sign[rotation=1] run data modify storage do:io output.Properties.rotation set value "1"
 execute if block ~ ~ ~ dark_oak_sign[rotation=2] run data modify storage do:io output.Properties.rotation set value "2"
 execute if block ~ ~ ~ dark_oak_sign[rotation=3] run data modify storage do:io output.Properties.rotation set value "3"

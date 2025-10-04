@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:big_dripleaf",Properties:{"facing": "north", "tilt": "none", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:big_dripleaf",Properties:{facing:"north",tilt:"none",waterlogged:"false"}}
 execute if block ~ ~ ~ big_dripleaf[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ big_dripleaf[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ big_dripleaf[facing=east] run data modify storage do:io output.Properties.facing set value "east"

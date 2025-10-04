@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:crafter",Properties:{"crafting": "false", "orientation": "north_up", "triggered": "false"}}
+data modify storage do:io output set value {Name:"minecraft:crafter",Properties:{crafting:"false",orientation:"north_up",triggered:"false"}}
 execute if block ~ ~ ~ crafter[crafting=true] run data modify storage do:io output.Properties.crafting set value "true"
 execute if block ~ ~ ~ crafter[orientation=down_east] run data modify storage do:io output.Properties.orientation set value "down_east"
 execute if block ~ ~ ~ crafter[orientation=down_north] run data modify storage do:io output.Properties.orientation set value "down_north"

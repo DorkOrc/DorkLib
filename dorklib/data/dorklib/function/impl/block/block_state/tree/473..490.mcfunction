@@ -1,0 +1,4 @@
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["iron_door","iron_ore","iron_trapdoor","jack_o_lantern"]}}} run return run function dorklib:impl/block/block_state/tree/473..476
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["jigsaw","jukebox","jungle_button","jungle_door","jungle_fence"]}}} run return run function dorklib:impl/block/block_state/tree/477..481
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["jungle_fence_gate","jungle_hanging_sign","jungle_leaves","jungle_log"]}}} run return run function dorklib:impl/block/block_state/tree/482..485
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["jungle_planks","jungle_pressure_plate","jungle_sapling","jungle_shelf","jungle_sign"]}}} run return run function dorklib:impl/block/block_state/tree/486..490

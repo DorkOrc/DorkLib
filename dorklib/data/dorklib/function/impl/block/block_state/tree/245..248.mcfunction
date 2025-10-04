@@ -1,4 +1,4 @@
-execute if block ~ ~ ~ minecraft:crimson_roots run return run data modify storage do:io output set value {Name:"minecraft:crimson_roots"}
-execute if block ~ ~ ~ minecraft:crimson_sign run return run function dorklib:impl/block/block_state/tree/crimson_sign
-execute if block ~ ~ ~ minecraft:crimson_slab run return run function dorklib:impl/block/block_state/tree/crimson_slab
-execute if block ~ ~ ~ minecraft:crimson_stairs run return run function dorklib:impl/block/block_state/tree/crimson_stairs
+execute if block ~ ~ ~ minecraft:crimson_button run return run function dorklib:impl/block/block_state/tree/crimson_button
+execute if block ~ ~ ~ minecraft:crimson_door run return run function dorklib:impl/block/block_state/tree/crimson_door
+execute if block ~ ~ ~ minecraft:crimson_fence run return run function dorklib:impl/block/block_state/tree/crimson_fence
+execute if block ~ ~ ~ minecraft:crimson_fence_gate run return run function dorklib:impl/block/block_state/tree/crimson_fence_gate

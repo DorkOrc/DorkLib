@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:redstone_wire",Properties:{"east": "none", "north": "none", "power": "0", "south": "none", "west": "none"}}
+data modify storage do:io output set value {Name:"minecraft:redstone_wire",Properties:{east:"none",north:"none",power:"0",south:"none",west:"none"}}
 execute if block ~ ~ ~ redstone_wire[east=up] run data modify storage do:io output.Properties.east set value "up"
 execute if block ~ ~ ~ redstone_wire[east=side] run data modify storage do:io output.Properties.east set value "side"
 execute if block ~ ~ ~ redstone_wire[north=up] run data modify storage do:io output.Properties.north set value "up"

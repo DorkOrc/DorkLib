@@ -1,5 +1,5 @@
-execute if block ~ ~ ~ minecraft:light_blue_carpet run return run data modify storage do:io output set value {Name:"minecraft:light_blue_carpet"}
-execute if block ~ ~ ~ minecraft:light_blue_concrete run return run data modify storage do:io output set value {Name:"minecraft:light_blue_concrete"}
-execute if block ~ ~ ~ minecraft:light_blue_concrete_powder run return run data modify storage do:io output set value {Name:"minecraft:light_blue_concrete_powder"}
-execute if block ~ ~ ~ minecraft:light_blue_glazed_terracotta run return run function dorklib:impl/block/block_state/tree/light_blue_glazed_terracotta
-execute if block ~ ~ ~ minecraft:light_blue_shulker_box run return run function dorklib:impl/block/block_state/tree/light_blue_shulker_box
+execute if block ~ ~ ~ minecraft:jungle_wall_sign run return run function dorklib:impl/block/block_state/tree/jungle_wall_sign
+execute if block ~ ~ ~ minecraft:jungle_wood run return run function dorklib:impl/block/block_state/tree/jungle_wood
+execute if block ~ ~ ~ minecraft:kelp run return run function dorklib:impl/block/block_state/tree/kelp
+execute if block ~ ~ ~ minecraft:kelp_plant run return run data modify storage do:io output set value {Name:"minecraft:kelp_plant"}
+execute if block ~ ~ ~ minecraft:ladder run return run function dorklib:impl/block/block_state/tree/ladder

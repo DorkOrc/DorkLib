@@ -1,5 +1,5 @@
-execute if block ~ ~ ~ minecraft:deepslate_lapis_ore run return run data modify storage do:io output set value {Name:"minecraft:deepslate_lapis_ore"}
-execute if block ~ ~ ~ minecraft:deepslate_redstone_ore run return run function dorklib:impl/block/block_state/tree/deepslate_redstone_ore
-execute if block ~ ~ ~ minecraft:deepslate_tile_slab run return run function dorklib:impl/block/block_state/tree/deepslate_tile_slab
-execute if block ~ ~ ~ minecraft:deepslate_tile_stairs run return run function dorklib:impl/block/block_state/tree/deepslate_tile_stairs
-execute if block ~ ~ ~ minecraft:deepslate_tile_wall run return run function dorklib:impl/block/block_state/tree/deepslate_tile_wall
+execute if block ~ ~ ~ minecraft:decorated_pot run return run function dorklib:impl/block/block_state/tree/decorated_pot
+execute if block ~ ~ ~ minecraft:deepslate run return run function dorklib:impl/block/block_state/tree/deepslate
+execute if block ~ ~ ~ minecraft:deepslate_brick_slab run return run function dorklib:impl/block/block_state/tree/deepslate_brick_slab
+execute if block ~ ~ ~ minecraft:deepslate_brick_stairs run return run function dorklib:impl/block/block_state/tree/deepslate_brick_stairs
+execute if block ~ ~ ~ minecraft:deepslate_brick_wall run return run function dorklib:impl/block/block_state/tree/deepslate_brick_wall

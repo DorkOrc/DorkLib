@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:dark_oak_door",Properties:{"facing": "north", "half": "lower", "hinge": "left", "open": "false", "powered": "false"}}
+data modify storage do:io output set value {Name:"minecraft:dark_oak_door",Properties:{facing:"north",half:"lower",hinge:"left",open:"false",powered:"false"}}
 execute if block ~ ~ ~ dark_oak_door[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ dark_oak_door[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ dark_oak_door[facing=east] run data modify storage do:io output.Properties.facing set value "east"

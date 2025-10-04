@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:leaf_litter",Properties:{"facing": "north", "segment_amount": "1"}}
+data modify storage do:io output set value {Name:"minecraft:leaf_litter",Properties:{facing:"north",segment_amount:"1"}}
 execute if block ~ ~ ~ leaf_litter[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ leaf_litter[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ leaf_litter[facing=east] run data modify storage do:io output.Properties.facing set value "east"

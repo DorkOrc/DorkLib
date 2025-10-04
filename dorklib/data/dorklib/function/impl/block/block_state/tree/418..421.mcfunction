@@ -1,4 +1,4 @@
-execute if block ~ ~ ~ minecraft:green_banner run return run function dorklib:impl/block/block_state/tree/green_banner
-execute if block ~ ~ ~ minecraft:green_bed run return run function dorklib:impl/block/block_state/tree/green_bed
-execute if block ~ ~ ~ minecraft:green_candle run return run function dorklib:impl/block/block_state/tree/green_candle
-execute if block ~ ~ ~ minecraft:green_candle_cake run return run function dorklib:impl/block/block_state/tree/green_candle_cake
+execute if block ~ ~ ~ minecraft:granite_stairs run return run function dorklib:impl/block/block_state/tree/granite_stairs
+execute if block ~ ~ ~ minecraft:granite_wall run return run function dorklib:impl/block/block_state/tree/granite_wall
+execute if block ~ ~ ~ minecraft:grass_block run return run function dorklib:impl/block/block_state/tree/grass_block
+execute if block ~ ~ ~ minecraft:gravel run return run data modify storage do:io output set value {Name:"minecraft:gravel"}

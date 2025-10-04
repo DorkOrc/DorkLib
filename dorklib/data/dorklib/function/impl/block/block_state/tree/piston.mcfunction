@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:piston",Properties:{"extended": "false", "facing": "north"}}
+data modify storage do:io output set value {Name:"minecraft:piston",Properties:{extended:"false",facing:"north"}}
 execute if block ~ ~ ~ piston[extended=true] run data modify storage do:io output.Properties.extended set value "true"
 execute if block ~ ~ ~ piston[facing=east] run data modify storage do:io output.Properties.facing set value "east"
 execute if block ~ ~ ~ piston[facing=south] run data modify storage do:io output.Properties.facing set value "south"

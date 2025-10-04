@@ -1,5 +1,5 @@
-execute if block ~ ~ ~ minecraft:oxidized_copper_grate run return run function dorklib:impl/block/block_state/tree/oxidized_copper_grate
-execute if block ~ ~ ~ minecraft:oxidized_copper_trapdoor run return run function dorklib:impl/block/block_state/tree/oxidized_copper_trapdoor
-execute if block ~ ~ ~ minecraft:oxidized_cut_copper run return run data modify storage do:io output set value {Name:"minecraft:oxidized_cut_copper"}
-execute if block ~ ~ ~ minecraft:oxidized_cut_copper_slab run return run function dorklib:impl/block/block_state/tree/oxidized_cut_copper_slab
-execute if block ~ ~ ~ minecraft:oxidized_cut_copper_stairs run return run function dorklib:impl/block/block_state/tree/oxidized_cut_copper_stairs
+execute if block ~ ~ ~ minecraft:ochre_froglight run return run function dorklib:impl/block/block_state/tree/ochre_froglight
+execute if block ~ ~ ~ minecraft:open_eyeblossom run return run data modify storage do:io output set value {Name:"minecraft:open_eyeblossom"}
+execute if block ~ ~ ~ minecraft:orange_banner run return run function dorklib:impl/block/block_state/tree/orange_banner
+execute if block ~ ~ ~ minecraft:orange_bed run return run function dorklib:impl/block/block_state/tree/orange_bed
+execute if block ~ ~ ~ minecraft:orange_candle run return run function dorklib:impl/block/block_state/tree/orange_candle

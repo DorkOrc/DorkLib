@@ -59,7 +59,12 @@ if __name__ == "__main__":
 				if len(block_states[block][0]) == 0:
 					continue
 				with open(f"dorklib/data/dorklib/function/impl/block/block_state/tree/{block}.mcfunction","w") as file:
-					file.write('data modify storage do:io output set value {Name:"minecraft:%s",Properties:%s}\n' % (block, json.dumps(block_states[block][1])))
+					file.write(
+						'data modify storage do:io output set value {Name:"minecraft:%s",Properties:%s}\n' % (
+							block, 
+							"{" + ",".join([k + ":\"" + v + "\"" for k, v in block_states[block][1].items()]) + "}"
+						)
+					)
 					for property, values in block_states[block][0].items():
 						for value in values:
 							if block_states[block][1][property] == value:

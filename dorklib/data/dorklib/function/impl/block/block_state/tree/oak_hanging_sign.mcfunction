@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:oak_hanging_sign",Properties:{"attached": "false", "rotation": "0", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:oak_hanging_sign",Properties:{attached:"false",rotation:"0",waterlogged:"false"}}
 execute if block ~ ~ ~ oak_hanging_sign[attached=true] run data modify storage do:io output.Properties.attached set value "true"
 execute if block ~ ~ ~ oak_hanging_sign[rotation=1] run data modify storage do:io output.Properties.rotation set value "1"
 execute if block ~ ~ ~ oak_hanging_sign[rotation=2] run data modify storage do:io output.Properties.rotation set value "2"

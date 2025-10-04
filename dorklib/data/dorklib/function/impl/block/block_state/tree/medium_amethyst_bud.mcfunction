@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:medium_amethyst_bud",Properties:{"facing": "up", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:medium_amethyst_bud",Properties:{facing:"up",waterlogged:"false"}}
 execute if block ~ ~ ~ medium_amethyst_bud[facing=north] run data modify storage do:io output.Properties.facing set value "north"
 execute if block ~ ~ ~ medium_amethyst_bud[facing=east] run data modify storage do:io output.Properties.facing set value "east"
 execute if block ~ ~ ~ medium_amethyst_bud[facing=south] run data modify storage do:io output.Properties.facing set value "south"

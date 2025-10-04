@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:pale_moss_carpet",Properties:{"bottom": "true", "east": "none", "north": "none", "south": "none", "west": "none"}}
+data modify storage do:io output set value {Name:"minecraft:pale_moss_carpet",Properties:{bottom:"true",east:"none",north:"none",south:"none",west:"none"}}
 execute if block ~ ~ ~ pale_moss_carpet[bottom=false] run data modify storage do:io output.Properties.bottom set value "false"
 execute if block ~ ~ ~ pale_moss_carpet[east=low] run data modify storage do:io output.Properties.east set value "low"
 execute if block ~ ~ ~ pale_moss_carpet[east=tall] run data modify storage do:io output.Properties.east set value "tall"

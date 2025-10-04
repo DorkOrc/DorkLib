@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:vault",Properties:{"facing": "north", "ominous": "false", "vault_state": "inactive"}}
+data modify storage do:io output set value {Name:"minecraft:vault",Properties:{facing:"north",ominous:"false",vault_state:"inactive"}}
 execute if block ~ ~ ~ vault[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ vault[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ vault[facing=east] run data modify storage do:io output.Properties.facing set value "east"

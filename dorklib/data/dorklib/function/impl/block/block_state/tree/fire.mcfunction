@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:fire",Properties:{"age": "0", "east": "false", "north": "false", "south": "false", "up": "false", "west": "false"}}
+data modify storage do:io output set value {Name:"minecraft:fire",Properties:{age:"0",east:"false",north:"false",south:"false",up:"false",west:"false"}}
 execute if block ~ ~ ~ fire[age=1] run data modify storage do:io output.Properties.age set value "1"
 execute if block ~ ~ ~ fire[age=2] run data modify storage do:io output.Properties.age set value "2"
 execute if block ~ ~ ~ fire[age=3] run data modify storage do:io output.Properties.age set value "3"

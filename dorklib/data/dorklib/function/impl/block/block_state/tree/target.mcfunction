@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:target",Properties:{"power": "0"}}
+data modify storage do:io output set value {Name:"minecraft:target",Properties:{power:"0"}}
 execute if block ~ ~ ~ target[power=1] run data modify storage do:io output.Properties.power set value "1"
 execute if block ~ ~ ~ target[power=2] run data modify storage do:io output.Properties.power set value "2"
 execute if block ~ ~ ~ target[power=3] run data modify storage do:io output.Properties.power set value "3"

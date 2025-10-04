@@ -1,4 +1,4 @@
-execute if block ~ ~ ~ minecraft:deepslate_diamond_ore run return run data modify storage do:io output set value {Name:"minecraft:deepslate_diamond_ore"}
-execute if block ~ ~ ~ minecraft:deepslate_emerald_ore run return run data modify storage do:io output set value {Name:"minecraft:deepslate_emerald_ore"}
-execute if block ~ ~ ~ minecraft:deepslate_gold_ore run return run data modify storage do:io output set value {Name:"minecraft:deepslate_gold_ore"}
-execute if block ~ ~ ~ minecraft:deepslate_iron_ore run return run data modify storage do:io output set value {Name:"minecraft:deepslate_iron_ore"}
+execute if block ~ ~ ~ minecraft:dead_tube_coral run return run function dorklib:impl/block/block_state/tree/dead_tube_coral
+execute if block ~ ~ ~ minecraft:dead_tube_coral_block run return run data modify storage do:io output set value {Name:"minecraft:dead_tube_coral_block"}
+execute if block ~ ~ ~ minecraft:dead_tube_coral_fan run return run function dorklib:impl/block/block_state/tree/dead_tube_coral_fan
+execute if block ~ ~ ~ minecraft:dead_tube_coral_wall_fan run return run function dorklib:impl/block/block_state/tree/dead_tube_coral_wall_fan

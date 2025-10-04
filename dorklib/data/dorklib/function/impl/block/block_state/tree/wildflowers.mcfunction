@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:wildflowers",Properties:{"facing": "north", "flower_amount": "1"}}
+data modify storage do:io output set value {Name:"minecraft:wildflowers",Properties:{facing:"north",flower_amount:"1"}}
 execute if block ~ ~ ~ wildflowers[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ wildflowers[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ wildflowers[facing=east] run data modify storage do:io output.Properties.facing set value "east"

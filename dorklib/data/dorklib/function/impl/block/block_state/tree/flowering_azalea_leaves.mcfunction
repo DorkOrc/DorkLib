@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:flowering_azalea_leaves",Properties:{"distance": "7", "persistent": "false", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:flowering_azalea_leaves",Properties:{distance:"7",persistent:"false",waterlogged:"false"}}
 execute if block ~ ~ ~ flowering_azalea_leaves[distance=1] run data modify storage do:io output.Properties.distance set value "1"
 execute if block ~ ~ ~ flowering_azalea_leaves[distance=2] run data modify storage do:io output.Properties.distance set value "2"
 execute if block ~ ~ ~ flowering_azalea_leaves[distance=3] run data modify storage do:io output.Properties.distance set value "3"

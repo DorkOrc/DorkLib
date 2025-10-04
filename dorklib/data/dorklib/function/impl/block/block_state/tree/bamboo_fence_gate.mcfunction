@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:bamboo_fence_gate",Properties:{"facing": "north", "in_wall": "false", "open": "false", "powered": "false"}}
+data modify storage do:io output set value {Name:"minecraft:bamboo_fence_gate",Properties:{facing:"north",in_wall:"false",open:"false",powered:"false"}}
 execute if block ~ ~ ~ bamboo_fence_gate[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ bamboo_fence_gate[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ bamboo_fence_gate[facing=east] run data modify storage do:io output.Properties.facing set value "east"

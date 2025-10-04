@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:waxed_copper_trapdoor",Properties:{"facing": "north", "half": "bottom", "open": "false", "powered": "false", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:waxed_copper_trapdoor",Properties:{facing:"north",half:"bottom",open:"false",powered:"false",waterlogged:"false"}}
 execute if block ~ ~ ~ waxed_copper_trapdoor[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ waxed_copper_trapdoor[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ waxed_copper_trapdoor[facing=east] run data modify storage do:io output.Properties.facing set value "east"

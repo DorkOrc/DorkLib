@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:rail",Properties:{"shape": "north_south", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:rail",Properties:{shape:"north_south",waterlogged:"false"}}
 execute if block ~ ~ ~ rail[shape=east_west] run data modify storage do:io output.Properties.shape set value "east_west"
 execute if block ~ ~ ~ rail[shape=ascending_east] run data modify storage do:io output.Properties.shape set value "ascending_east"
 execute if block ~ ~ ~ rail[shape=ascending_west] run data modify storage do:io output.Properties.shape set value "ascending_west"

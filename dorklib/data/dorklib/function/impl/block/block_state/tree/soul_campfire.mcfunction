@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:soul_campfire",Properties:{"facing": "north", "lit": "true", "signal_fire": "false", "waterlogged": "false"}}
+data modify storage do:io output set value {Name:"minecraft:soul_campfire",Properties:{facing:"north",lit:"true",signal_fire:"false",waterlogged:"false"}}
 execute if block ~ ~ ~ soul_campfire[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ soul_campfire[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ soul_campfire[facing=east] run data modify storage do:io output.Properties.facing set value "east"

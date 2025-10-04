@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:pink_banner",Properties:{"rotation": "0"}}
+data modify storage do:io output set value {Name:"minecraft:pink_banner",Properties:{rotation:"0"}}
 execute if block ~ ~ ~ pink_banner[rotation=1] run data modify storage do:io output.Properties.rotation set value "1"
 execute if block ~ ~ ~ pink_banner[rotation=2] run data modify storage do:io output.Properties.rotation set value "2"
 execute if block ~ ~ ~ pink_banner[rotation=3] run data modify storage do:io output.Properties.rotation set value "3"

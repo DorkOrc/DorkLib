@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:beehive",Properties:{"facing": "north", "honey_level": "0"}}
+data modify storage do:io output set value {Name:"minecraft:beehive",Properties:{facing:"north",honey_level:"0"}}
 execute if block ~ ~ ~ beehive[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ beehive[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ beehive[facing=east] run data modify storage do:io output.Properties.facing set value "east"

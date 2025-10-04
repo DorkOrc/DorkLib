@@ -1,0 +1,4 @@
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["dripstone_block","dropper","emerald_block","emerald_ore"]}}} run return run function dorklib:impl/block/block_state/tree/364..367
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["enchanting_table","end_gateway","end_portal","end_portal_frame","end_rod"]}}} run return run function dorklib:impl/block/block_state/tree/368..372
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["end_stone","end_stone_brick_slab","end_stone_brick_stairs","end_stone_brick_wall"]}}} run return run function dorklib:impl/block/block_state/tree/373..376
+execute if predicate {condition:"minecraft:location_check",predicate:{block:{blocks:["end_stone_bricks","ender_chest","exposed_chiseled_copper","exposed_copper","exposed_copper_bars"]}}} run return run function dorklib:impl/block/block_state/tree/377..381

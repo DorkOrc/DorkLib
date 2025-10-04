@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:farmland",Properties:{"moisture": "0"}}
+data modify storage do:io output set value {Name:"minecraft:farmland",Properties:{moisture:"0"}}
 execute if block ~ ~ ~ farmland[moisture=1] run data modify storage do:io output.Properties.moisture set value "1"
 execute if block ~ ~ ~ farmland[moisture=2] run data modify storage do:io output.Properties.moisture set value "2"
 execute if block ~ ~ ~ farmland[moisture=3] run data modify storage do:io output.Properties.moisture set value "3"

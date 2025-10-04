@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:skeleton_wall_skull",Properties:{"facing": "north", "powered": "false"}}
+data modify storage do:io output set value {Name:"minecraft:skeleton_wall_skull",Properties:{facing:"north",powered:"false"}}
 execute if block ~ ~ ~ skeleton_wall_skull[facing=south] run data modify storage do:io output.Properties.facing set value "south"
 execute if block ~ ~ ~ skeleton_wall_skull[facing=west] run data modify storage do:io output.Properties.facing set value "west"
 execute if block ~ ~ ~ skeleton_wall_skull[facing=east] run data modify storage do:io output.Properties.facing set value "east"

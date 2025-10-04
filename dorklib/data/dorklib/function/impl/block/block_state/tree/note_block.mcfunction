@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:note_block",Properties:{"instrument": "harp", "note": "0", "powered": "false"}}
+data modify storage do:io output set value {Name:"minecraft:note_block",Properties:{instrument:"harp",note:"0",powered:"false"}}
 execute if block ~ ~ ~ note_block[instrument=basedrum] run data modify storage do:io output.Properties.instrument set value "basedrum"
 execute if block ~ ~ ~ note_block[instrument=snare] run data modify storage do:io output.Properties.instrument set value "snare"
 execute if block ~ ~ ~ note_block[instrument=hat] run data modify storage do:io output.Properties.instrument set value "hat"

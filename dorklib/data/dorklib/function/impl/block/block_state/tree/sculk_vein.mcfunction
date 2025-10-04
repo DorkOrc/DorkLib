@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:sculk_vein",Properties:{"down": "false", "east": "false", "north": "false", "south": "false", "up": "false", "waterlogged": "false", "west": "false"}}
+data modify storage do:io output set value {Name:"minecraft:sculk_vein",Properties:{down:"false",east:"false",north:"false",south:"false",up:"false",waterlogged:"false",west:"false"}}
 execute if block ~ ~ ~ sculk_vein[down=true] run data modify storage do:io output.Properties.down set value "true"
 execute if block ~ ~ ~ sculk_vein[east=true] run data modify storage do:io output.Properties.east set value "true"
 execute if block ~ ~ ~ sculk_vein[north=true] run data modify storage do:io output.Properties.north set value "true"

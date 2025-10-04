@@ -1,4 +1,4 @@
-data modify storage do:io output set value {Name:"minecraft:repeater",Properties:{"delay": "1", "facing": "north", "locked": "false", "powered": "false"}}
+data modify storage do:io output set value {Name:"minecraft:repeater",Properties:{delay:"1",facing:"north",locked:"false",powered:"false"}}
 execute if block ~ ~ ~ repeater[delay=2] run data modify storage do:io output.Properties.delay set value "2"
 execute if block ~ ~ ~ repeater[delay=3] run data modify storage do:io output.Properties.delay set value "3"
 execute if block ~ ~ ~ repeater[delay=4] run data modify storage do:io output.Properties.delay set value "4"
