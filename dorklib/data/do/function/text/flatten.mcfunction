@@ -1,4 +1,4 @@
-# Flatten text component to a single string. The text component will be resolved and any "translate" or "keybind" components will be ignored.
+# Flatten text component to a single string. The text component will be resolved and anything other than "text" components will be ignored.
 # str|dict|list -> str
 
 execute unless function dorklib:io/init run return fail

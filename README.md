@@ -31,7 +31,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   <details>
   <summary><h3>Flatten Text Component - <code>do:text/flatten</code></h3></summary>
 
-  Flattens the text component into a single string.
+  Flattens the text component into a single string. The text component will be resolved and anything other than "text" components will be ignored.
   > `(input: str|compound|list) -> str`
   - `storage do:io input` is a text component.
   </details>
