@@ -250,6 +250,20 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   <summary><h2>Entity Functions</h2></summary>
 
   <details>
+  <summary><h3>Get UUID (Integer Array, Fast) - <code>do:entity/get_uuid</code></h3></summary>
+
+  Gets the UUID of the executing entity without serialising its NBT data. Most useful for players.
+  > `() -> tuple[int,int,int,int]`
+  </details>
+
+  <details>
+  <summary><h3>Get UUID (Hexadecimal) - <code>do:entity/get_uuid_repr</code></h3></summary>
+
+  Gets the hexadecimal representation of an entity's UUID.
+  > `() -> string`
+  </details>
+
+  <details>
   <summary><h3>Remove Entity Discretely - <code>function do:entity/remove</code></h3></summary>
 
   Kills the entity without any death animation, loot/xp drops, or vibrations occurring. Strictly speaking, it dismounts the entity's passengers, teleports the entity to the lowest y-position directly below them, then kills them. 
