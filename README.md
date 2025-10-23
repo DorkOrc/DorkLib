@@ -264,6 +264,17 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 
   <details>
+  <summary><h3>Execute as UUID - <code>do:target/uuid</code></h3></summary>
+
+  Targets the entity whose UUID matches the input integer array UUID.
+  > `(input: tuple[int,int,int,int], function: str) -> None`
+  - `storage do:io input` (*If inlined, use `args.uuid` instead) is an int-array UUID.
+  - `storage do:io args.uuid` (*Only if inlined*; *Optional if `args.uuid__from` is specified*) is an int-array UUID. Overrides the `input`.
+  - `storage do:io args.uuid__from` (*Only if inlined*; *Optional if `args.uuid` is specified*) is a source to fetch the UUID from. Overrides `args.uuid`.
+  - `storage do:io args.function` is a string containing a function ID.
+  </details>
+
+  <details>
   <summary><h3>Remove Entity Discretely - <code>function do:entity/remove</code></h3></summary>
 
   Kills the entity without any death animation, loot/xp drops, or vibrations occurring. Strictly speaking, it dismounts the entity's passengers, teleports the entity to the lowest y-position directly below them, then kills them. 
