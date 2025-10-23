@@ -19,5 +19,6 @@ data modify storage dorklib:main functions."do:target/projectiles".entity_repr s
 
 # find entities and run function as each of them
 function dorklib:impl/do/target/projectiles/target_entities with storage dorklib:main functions."do:target/projectiles"
+scoreboard players reset @s dorklib.var
 
 return 1
