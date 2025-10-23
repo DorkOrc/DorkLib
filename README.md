@@ -264,15 +264,58 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 
   <details>
-  <summary><h3>Execute as UUID - <code>do:target/uuid</code></h3></summary>
+  <summary><h3>Get Entity Reference (UUID or Name) - <code>do:entity/get_entity_repr</code></h3></summary>
 
-  Targets the entity whose UUID matches the input integer array UUID.
+  For non-player entities, it gets hexadecimal representation of the entity's UUID. For players, it gets their username.
+  > `() -> string`
+  </details>
+
+  <details>
+  <summary><h3>Execute as entity matching UUID - <code>do:target/uuid</code></h3></summary>
+
+  Targets the entity whose UUID matches the input integer array UUID. This function always succeeds, even if an entity is not found.
   > `(input: tuple[int,int,int,int], function: str) -> None`
   - `storage do:io input` (*If inlined, use `args.uuid` instead) is an int-array UUID.
   - `storage do:io args.uuid` (*Only if inlined*; *Optional if `args.uuid__from` is specified*) is an int-array UUID. Overrides the `input`.
   - `storage do:io args.uuid__from` (*Only if inlined*; *Optional if `args.uuid` is specified*) is a source to fetch the UUID from. Overrides `args.uuid`.
   - `storage do:io args.function` is a string containing a function ID.
   </details>
+
+  <details>
+  <summary><h3>Execute as Projectiles - <code>do:target/projectiles</code></h3></summary>
+
+  Targets all entities whose `origin` is the executing entity. This includes all entities with an origin, including fishing bobbers, et cetera. This function always succeeds, even if an entity is not found.
+  > `(function: str) -> None`
+  - `storage do:io args.function` is a string containing a function ID.
+  - `storage do:io args.type` (*Optional*) is a string containing an entity type ID or a hash-prefixes entity type tag. If omitted, all entity types will be included.
+  </details>
+
+  <details>
+  <summary><h3>Execute as Allay's Liked Player - <code>do:target/liked_player</code></h3></summary>
+
+  Targets the `liked_player` of the executing entity. The executing entity must be an Allay. This function always succeeds, even if an entity is not found.
+  > `(function: str) -> None`
+  - `storage do:io args.function` is a string containing a function ID.
+  </details>
+
+  <details>
+  <summary><h3>Execute as Warden's Anger Suspects - <code>do:target/anger_suspects</code></h3></summary>
+
+  Targets the `anger.suspects` of the executing entity. The executing entity must be a Warden. This function always succeeds, even if an entity is not found.
+  > `(function: str) -> None`
+  - `storage do:io args.function` is a string containing a function ID.
+  </details>
+
+  <details>
+  <summary><h3>Execute as Item Entity's Target (Owner) - <code>do:target/item_target</code></h3></summary>
+
+  Targets the `Owner` of the executing entity. The executing entity must be an Item Entity. This function always succeeds, even if an entity is not found.
+  > `(function: str) -> None`
+  - `storage do:io args.function` is a string containing a function ID.
+  </details>
+
+  <details>
+  <summary><h3>Execute as Warden's Anger Suspects - <code>do:target/anger_suspects</code></h3></summary>
 
   <details>
   <summary><h3>Remove Entity Discretely - <code>function do:entity/remove</code></h3></summary>

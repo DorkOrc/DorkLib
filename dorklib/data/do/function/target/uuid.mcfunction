@@ -1,4 +1,4 @@
-# Runs a function as the entity matching a UUID
+# Targets the entity whose UUID matches the input integer array UUID.
 # tuple[int,int,int,int] -> None
 
 execute unless function dorklib:io/init run return fail
