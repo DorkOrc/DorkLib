@@ -291,6 +291,14 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 
   <details>
+  <summary><h3>Execute as "Looking At" Entity - <code>do:target/looking_at</code></h3></summary>
+
+  Targets the entity which the executing entity is looking at (based on the `looking_at` sub-predicate). The executing entity must be a Player. This function always succeeds, even if an entity is not found.
+  > `(function: str) -> None`
+  - `storage do:io args.function` is a string containing a function ID.
+  </details>
+
+  <details>
   <summary><h3>Execute as Allay's Liked Player - <code>do:target/liked_player</code></h3></summary>
 
   Targets the `liked_player` of the executing entity. The executing entity must be an Allay. This function always succeeds, even if an entity is not found.
