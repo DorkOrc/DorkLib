@@ -18,4 +18,4 @@ execute store result score #d_x dorklib.var run data get storage dorklib:main fu
 execute store result score #d_y dorklib.var run data get storage dorklib:main functions."do:raycast/to_block".d[1] 1024
 execute store result score #d_z dorklib.var run data get storage dorklib:main functions."do:raycast/to_block".d[2] 1024
 
-function do:remove_entity
+function do:entity/remove

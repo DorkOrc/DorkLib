@@ -1,5 +1,5 @@
 # if the function is not executing as an entity, use a temporary marker
-execute unless entity @s summon marker if function do:remove_entity run return run function dorklib:impl/do/str/escape/main
+execute unless entity @s summon marker if function do:entity/remove run return run function dorklib:impl/do/str/escape/main
 
 # 
 data modify storage dorklib:main functions."do:str/escape".temp_list set value [""]
