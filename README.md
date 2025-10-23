@@ -18,7 +18,7 @@ function do:str/split. {args:{separator:"_"}}
 Once a function is ran, the `input` and `args` fields will be deleted, leaving only the `output`.
 
 <details>
-  <summary><h2>Text Component I/O Functions</h2></summary>
+  <summary><h2><u>Text Component I/O Functions</u></h2></summary>
 
   <details>
   <summary><h3>Resolve Text Component - <code>do:text/resolve</code></h3></summary>
@@ -39,7 +39,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h2>String I/O Functions</h2></summary>
+  <summary><h2><u>String I/O Functions</u></h2></summary>
 
   <details>
   <summary><h3>Concatenate Strings - <code>do:str/join</code></h3></summary>
@@ -110,7 +110,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h2>List (& Array) I/O Functions</h2></summary>
+  <summary><h2><u>List (& Array) I/O Functions</u></h2></summary>
 
   <details>
   <summary><h3>Get the Index of a Value in a List - <code>do:list/index</code></h3></summary>
@@ -123,7 +123,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h2>Compound I/O Functions</h2></summary>
+  <summary><h2><u>Compound I/O Functions</u></h2></summary>
 
   <details>
   <summary><h3>Get the Items of a Compound - <code>do:compound/items</code></h3></summary>
@@ -171,7 +171,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h2>NBT I/O Functions</h2></summary>
+  <summary><h2><u>NBT I/O Functions</u></h2></summary>
 
   <details>
   <summary><h3>Get Data Type - <code>do:nbt/type</code></h3></summary>
@@ -208,7 +208,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h2>Raycasting Functions (Voxel Traversal)</h2></summary>
+  <summary><h2><u>Raycasting Functions (Voxel Traversal)</u></h2></summary>
 
   These functions use a voxel traversal algorithm, so they are both very efficient and very precise. The current implementation does not take into account the physical hitboxes of blocks, and ignores entities.
 
@@ -247,7 +247,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h2>Entity Functions</h2></summary>
+  <summary><h2><u>Entity Functions</u></h2></summary>
 
   <details>
   <summary><h3>Get UUID (Integer Array, Fast) - <code>do:entity/get_uuid</code></h3></summary>
@@ -348,7 +348,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h2>Block Functions</h2></summary>
+  <summary><h2><u>Block Functions</u></h2></summary>
 
   <details>
   <summary><h3>Block State - <code>do:block/block_state</code></h3></summary>
@@ -359,7 +359,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
-  <summary><h2>Dynamic Functions API</h2></summary>
+  <summary><h2><u>Dynamic Functions API</u></h2></summary>
 
   <details>
   <summary><h3>Creates a Dynamic Function - <code>do:dynamic_function/add</code></h3></summary>
