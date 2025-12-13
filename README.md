@@ -36,6 +36,15 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   > `(input: str|compound|list) -> str`
   - `storage do:io input` is a text component.
   </details>
+
+  <details>
+  <summary><h3>Limit Length - <code>do:text/limit_length</code></h3></summary>
+
+  Discards any characters after the given character limit. The text component will be resolved and anything other than "text" components will be ignored. May split apart surrogate pairs.
+  > `(input: str|compound|list) -> str|compound`
+  - `storage do:io input` is a text component.
+  - `storage do:io args.length` is a non-negative integer.
+  </details>
 </details>
 
 <details>
