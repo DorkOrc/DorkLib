@@ -217,6 +217,18 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 </details>
 
 <details>
+  <summary><h2><u>Storage Functions</u></h2></summary>
+
+  <details>
+  <summary><h3>Remove Storage - <code>do:storage/remove</code></h3></summary>
+
+  Deletes an entire storage file.
+  - `storage do:io input` (*If inlined, use `args.storage` instead) is a namespaced ID.
+  - `storage do:io args.storage` (*Only if inlined*) is a namespaced ID. Overrides the `input`.
+  </details>
+</details>
+
+<details>
   <summary><h2><u>Raycasting Functions (Voxel Traversal)</u></h2></summary>
 
   These functions use a voxel traversal algorithm, so they are both very efficient and very precise. The current implementation does not take into account the physical hitboxes of blocks, and ignores entities.
