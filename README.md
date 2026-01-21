@@ -19,8 +19,9 @@ function do:str/split. {args:{separator:"_"}}
 
 Once a function is ran, the `input` and `args` fields will be deleted, leaving only the `output`.
 
+## Text Component I/O Functions
 <details>
-  <summary><h2><u>Text Component I/O Functions</u></h2></summary>
+  <summary>Details</summary>
 
   <details>
   <summary><h3>Resolve Text Component - <code>do:text/resolve</code></h3></summary>
@@ -49,8 +50,10 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 </details>
 
+
+## String I/O Functions
 <details>
-  <summary><h2><u>String I/O Functions</u></h2></summary>
+  <summary>Details</summary>
 
   <details>
   <summary><h3>Concatenate Strings - <code>do:str/join</code></h3></summary>
@@ -120,8 +123,10 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 </details>
 
+
+## List (& Array) I/O Functions
 <details>
-  <summary><h2><u>List (& Array) I/O Functions</u></h2></summary>
+  <summary>Details</summary>
 
   <details>
   <summary><h3>Get the Index of a Value in a List - <code>do:list/index</code></h3></summary>
@@ -133,8 +138,10 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 </details>
 
+
+## Compound I/O Functions
 <details>
-  <summary><h2><u>Compound I/O Functions</u></h2></summary>
+  <summary>Details</summary>
 
   <details>
   <summary><h3>Get the Items of a Compound - <code>do:compound/items</code></h3></summary>
@@ -181,8 +188,9 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 </details>
 
+## NBT I/O Functions
 <details>
-  <summary><h2><u>NBT I/O Functions</u></h2></summary>
+  <summary>Details</summary>
 
   <details>
   <summary><h3>Get Data Type - <code>do:nbt/type</code></h3></summary>
@@ -218,8 +226,10 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 </details>
 
+
+## Storage Functions
 <details>
-  <summary><h2><u>Storage Functions</u></h2></summary>
+  <summary>Details</summary>
 
   <details>
   <summary><h3>Remove Storage - <code>do:storage/remove</code></h3></summary>
@@ -230,10 +240,11 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 </details>
 
-<details>
-  <summary><h2><u>Raycasting Functions (Voxel Traversal)</u></h2></summary>
 
-  These functions use a voxel traversal algorithm, so they are both very efficient and very precise. The current implementation does not take into account the physical hitboxes of blocks, and ignores entities.
+## Raycasting Functions (Voxel Traversal)
+These functions use a voxel traversal algorithm, so they are both very efficient and very precise. The current implementation does not take into account the physical hitboxes of blocks, and ignores entities.
+<details>
+  <summary>Details</summary>
 
   <details>
   <summary><h3>Raycast to Block - <code>do:raycast/to_block</code></h3></summary>
@@ -269,8 +280,10 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 </details>
 
+
+## Entity Functions
 <details>
-  <summary><h2><u>Entity Functions</u></h2></summary>
+  <summary>Details</summary>
 
   <details>
   <summary><h3>Get UUID (Integer Array, Fast) - <code>do:entity/get_uuid</code></h3></summary>
@@ -294,11 +307,42 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 
   <details>
-  <summary><h3>Execute as entity matching UUID - <code>do:target/uuid</code></h3></summary>
+  <summary><h3>Remove Entity Discretely - <code>function do:entity/remove</code></h3></summary>
 
+  Kills the entity without any death animation, loot/xp drops, or vibrations occurring. Strictly speaking, it dismounts the entity's passengers, teleports the entity to the lowest y-position directly below them, then kills them. 
+
+  This function is useful for non-mob entities too, such as markers, as using `/kill` would normally create a vibration at the location of the marker entity - [MC-220397](https://bugs.mojang.com/browse/MC/issues/MC-220397).
+
+  This may also be chained in `/execute` as `if function do:remove_entity` to kill an entity which was temporarily summoned with the `summon` sub-command. **Note** that you should make sure to position as the entity *before* running this function as the teleport into the void may cause issues. Unfortunately, I can't make the function teleport the entity into the void, then kill it, then teleport it back - [MC-276062](https://bugs.mojang.com/browse/MC/issues/MC-276062).
+
+  This is not intended to be ran as a player but, if it is, they will be killed as if `immediate_respawn` is true, `keep_inventory` is true, and `show_death_messages` is false, but without actually changing the game rules. The player will not be teleported into the void, meaning the death will still trigger sculk sensors and a hurt sound will play. However, this means `entity_hurt_player` advancement triggers will run at the correct location and the `LastDeathLocation` will be saved correctly. Any scoreboards tracking the `custom:deaths` or `deathCount` stats will still increase.
+  </details>
+
+  <details>
+  <summary><h3>Summon Passenger - <code>function do:summon/passenger</code></h3></summary>
+
+  Summons an entity which immediately mounts the executing entity, and then optionally runs a function.
+  > `(input: str|None, id: str|None = None, nbt: compound|None = None, function: str|None = None) -> str`
+  - `storage do:io input` (*If inlined, use `args.id` instead*) is an entity type ID.
+  - `storage do:io args.id` (*Only if inlined*) is an entity type ID. Overrides the `input`.
+  - `storage do:io args.nbt` (*Optional*) is an NBT compound of tags to summon the entity with. If specified, the entity is summoned with that data directly. If omitted, the entity is summoned with default randomness. `UUID` and `Pos` tags are ignored.
+  - `storage do:io args.function` (*Optional*) is a function ID (without macro arguments) to run as the entity immediately after it mounts its vehicle. If omitted, no function is ran.
+
+  e.g.
+  ```
+  execute as @n[type=chicken] run function do:summon/passenger {args:{id:"minecraft:zombie",nbt:{IsBaby:1b},function:"namespace:test"}}
+  ```
+
+  </details>
+
+  ### Targeting Entities
+
+  <details>
+  <summary><h3>Execute as entity matching UUID - <code>do:target/uuid</code></h3></summary>
+  
   Targets the entity whose UUID matches the input integer array UUID. This function always succeeds, even if an entity is not found.
   > `(input: tuple[int,int,int,int], function: str) -> None`
-  - `storage do:io input` (*If inlined, use `args.uuid` instead) is an int-array UUID.
+  - `storage do:io input` (*If inlined, use `args.uuid` instead*) is an int-array UUID.
   - `storage do:io args.uuid` (*Only if inlined*; *Optional if `args.uuid__from` is specified*) is an int-array UUID. Overrides the `input`.
   - `storage do:io args.uuid__from` (*Only if inlined*; *Optional if `args.uuid` is specified*) is a source to fetch the UUID from. Overrides `args.uuid`.
   - `storage do:io args.function` is a string containing a function ID.
@@ -344,42 +388,12 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   > `(function: str) -> None`
   - `storage do:io args.function` is a string containing a function ID.
   </details>
-
-  <details>
-  <summary><h3>Execute as Warden's Anger Suspects - <code>do:target/anger_suspects</code></h3></summary>
-
-  <details>
-  <summary><h3>Remove Entity Discretely - <code>function do:entity/remove</code></h3></summary>
-
-  Kills the entity without any death animation, loot/xp drops, or vibrations occurring. Strictly speaking, it dismounts the entity's passengers, teleports the entity to the lowest y-position directly below them, then kills them. 
-
-  This function is useful for non-mob entities too, such as markers, as using `/kill` would normally create a vibration at the location of the marker entity - [MC-220397](https://bugs.mojang.com/browse/MC/issues/MC-220397).
-
-  This may also be chained in `/execute` as `if function do:remove_entity` to kill an entity which was temporarily summoned with the `summon` sub-command. **Note** that you should make sure to position as the entity *before* running this function as the teleport into the void may cause issues. Unfortunately, I can't make the function teleport the entity into the void, then kill it, then teleport it back - [MC-276062](https://bugs.mojang.com/browse/MC/issues/MC-276062).
-
-  This is not intended to be ran as a player but, if it is, they will be killed as if `doImmediateRespawn` is true, `keepInventory` is true, and `showDeathMessages` is false, but without actually changing the gamerules. The player will not be teleported into the void, meaning the death will still trigger sculk sensors and a hurt sound will play. However, this means `entity_hurt_player` advancement triggers will run at the correct location and the `LastDeathLocation` will be saved correctly. Any scoreboards tracking the `custom:deaths` or `deathCount` stats will still increase.
-  </details>
-
-  <details>
-  <summary><h3>Summon Passenger - <code>function do:summon/passenger</code></h3></summary>
-
-  Summons an entity which immediately mounts the executing entity, and then optionally runs a function.
-  > `(input: str|None, id: str|None = None, nbt: compound|None = None, function: str|None = None) -> str`
-  - `storage do:io input` (*If inlined, use `args.id` instead*) is an entity type ID.
-  - `storage do:io args.id` (*Only if inlined*) is an entity type ID. Overrides the `input`.
-  - `storage do:io args.nbt` (*Optional*) is an NBT compound of tags to summon the entity with. If specified, the entity is summoned with that data directly. If omitted, the entity is summoned with default randomness. `UUID` and `Pos` tags are ignored.
-  - `storage do:io args.function` (*Optional*) is a function ID (without macro arguments) to run as the entity immediately after it mounts its vehicle. If omitted, no function is ran.
-
-  e.g.
-  ```
-  execute as @n[type=chicken] run function do:summon/passenger {args:{id:"minecraft:zombie",nbt:{IsBaby:1b},function:"namespace:test"}}
-  ```
-
-  </details>
 </details>
 
+
+## Block Functions
 <details>
-  <summary><h2><u>Block Functions</u></h2></summary>
+  <summary>Details</summary>
 
   <details>
   <summary><h3>Block State - <code>do:block/block_state</code></h3></summary>
@@ -389,8 +403,10 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   </details>
 </details>
 
+
+## Dynamic Functions API
 <details>
-  <summary><h2><u>Dynamic Functions API</u></h2></summary>
+  <summary>Details</summary>
 
   <details>
   <summary><h3>Creates a Dynamic Function - <code>do:dynamic_function/add</code></h3></summary>
@@ -440,4 +456,56 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io args.name` is a lowercase alphanumeric identifier (namespaced ID but without the namespace).
 
   </details>
+</details>
+
+## Game Rule Cross-Compatibility Functions
+Intended to be used in place of the `/gamerule` command for cross-compatibility between 1.21.10 and 1.21.11+. All functions use the *new* game rule names.
+<details>
+  <summary>Details</summary>
+
+  <details>
+  <summary><h3>Get Game Rule Value - <code>do:game_rule/get/...</code></h3></summary>
+
+  The `result` will be the same as what would be returned from `/gamerule <game_rule>`. Typically 1 for true, 0 for false, or the stored value for integer game rules. The `success` will always be 1.
+
+  </details>
+
+  <details>
+  <summary><h3>Set Game Rule - <code>do:game_rule/set/.../...</code></h3></summary>
+
+  Boolean game rules will have a `set/.../false` and a `set/.../true` function. These are self-explanatory.
+  
+  Integer game rules will have a `set/.../value` function which takes a "`value`" macro argument. This value is not validated, so the function may fail if a number is entered that is outside of the range for this game rule. Integer game rules also have a `set/.../default` function for resetting it to its default value.
+
+  Some game rules have additional functions for special cases:
+  - `set/fire_spread_radius_around_player/no_fire_spreading`
+  - `set/fire_spread_radius_around_player/unlimited_fire_spreading`
+  - `set/max_entity_cramming/no_entity_cramming`
+  - `set/players_sleeping_percentage/all_players_must_sleep`
+  - `set/players_sleeping_percentage/at_least_one_player_must_sleep`
+  - `set/random_tick_speed/no_random_ticks`
+
+  </details>
+
+  The `max_minecart_speed` game rule functions will fail if the Minecart Improvements experiment is not enabled. No errors will be printed into the logs in any case.
+
+
+  Some special cases exist to bridge the gap between 1.21.10's `doFireTick` & `allowFireTicksAwayFromPlayer`, and 1.21.11's `minecraft:fire_spread_radius_around_player`...
+
+  In 1.21.10:
+  - `get/fire_spread_radius_around_player` will return -1, 0, or 128 based on the states of `doFireTick` and `allowFireTicksAwayFromPlayer`.
+  - `get/fire_spread_radius_around_player/allow_fire_spreading_away_from_player` queries the `allowFireTicksAwayFromPlayer` game rule. It requires `doFireTick` to be true though.
+  - `get/fire_spread_radius_around_player/spread_fire` queries the `doFireTick` game rule.
+  - `set/fire_spread_radius_around_player/default` sets `doFireTick` and `allowFireTicksAwayFromPlayer` to true and false respectively.
+  - `set/fire_spread_radius_around_player/no_fire_spreading` sets both game rules to false.
+  - `set/fire_spread_radius_around_player/unlimited_fire_spreading` sets both game rules to true.
+  - `set/fire_spread_radius_around_player/value` runs one of the other three functions based on the value. 0 runs `no_fire_spreading`, -1 runs `unlimited_fire_spreading`, and 128 runs `default`. Any other value fails.
+
+  In 1.21.11:
+  - `get/fire_spread_radius_around_player` returns the value of the `minecraft:fire_spread_radius_around_player` game rule.
+  - `get/fire_spread_radius_around_player/allow_fire_spreading_away_from_player` passes if the game rule is -1 or greater than 127.
+  - `get/fire_spread_radius_around_player/spread_fire` passes if the game rule is non-zero.
+  - `set/fire_spread_radius_around_player/default` sets the game rule to 128.
+  - `set/fire_spread_radius_around_player/no_fire_spreading` sets the game rule to 0.
+  - `set/fire_spread_radius_around_player/unlimited_fire_spreading` sets the game rule to -1.
 </details>
