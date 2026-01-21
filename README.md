@@ -1,5 +1,7 @@
 # DorkLib
 
+A personal library of general-purpose tools for use in data packs. Supports 1.21.11 (base) and 1.21.10 (overlay). Intended to support realms (no "experimental" features).
+
 ## Overview
 API functions are all functions under the `do` namespace, for example `do:str/join`.
 
