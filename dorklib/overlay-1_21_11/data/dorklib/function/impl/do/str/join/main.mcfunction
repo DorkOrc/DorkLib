@@ -21,6 +21,7 @@ data remove storage dorklib:main functions."do:str/join".substrings[0]
 function do:str/escape/double_quote
 function dorklib:impl/do/str/join/insert_single_quote with storage do:io
 
+data modify storage dorklib:main functions."do:str/join".temp_list set value [""]
 execute in minecraft:overworld run function dorklib:impl/do/str/join/loop
 
 data modify storage do:io output set string storage dorklib:main functions."do:str/join".string 1

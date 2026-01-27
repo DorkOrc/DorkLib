@@ -2,10 +2,15 @@
 	"pack": {
 		"description": "DorkLib",
 		"min_format": 88,
-		"max_format": 94
+		"max_format": 98
 	},
 	"overlays": {
 		"entries": [
+			{
+				"directory": "overlay-1_21_11",
+				"min_format": 88,
+				"max_format": 97
+			},
 			{
 				"directory": "overlay-1_21_10",
 				"min_format": 88,

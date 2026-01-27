@@ -9,4 +9,4 @@ execute if score #different dorklib.var matches 0 store result storage do:io out
 
 # continue unless list is empty
 execute if data storage dorklib:main functions."do:list/index".list[0] run return run function dorklib:impl/do/list/index/loop
-return run function dorklib:exception {args:{message:[{storage:"dorklib:main",nbt:'functions."do:list/index".value_repr'}," is not in list"]}}
+return run function dorklib:exception {args:{message:[{storage:"dorklib:main",nbt:'functions."do:list/index".value_repr',interpret:true}," is not in list"]}}
