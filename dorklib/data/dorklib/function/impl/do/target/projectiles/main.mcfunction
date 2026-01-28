@@ -1,13 +1,13 @@
-execute unless entity @s run return run function dorklib:exception {args:{message:"Expected an entity"}}
-execute unless data storage do:io args.function run return run function dorklib:exception {args:{message:"Missing argument: \"function\""}}
+execute unless entity @s run return run function dorklib:exception {args:{message:"Expected to run as an entity"}}
+execute unless data storage do:io args.function run return run function dorklib:exception {args:{message:"Expected a \"function\" argument"}}
 
 # validate arguments
 scoreboard players set #success dorklib.var 0
 execute store success score #success dorklib.var run function dorklib:impl/do/target/projectiles/validate_function with storage do:io args
-execute if score #success dorklib.var matches 0 run return run function dorklib:exception {args:{message:"Invalid argument: Function must be a namespaced ID"}}
+execute if score #success dorklib.var matches 0 run return run function dorklib:exception {args:{message:"The \"function\" argument must be a namespaced ID"}}
 scoreboard players set #success dorklib.var 0
 execute if data storage do:io args.type store success score #success dorklib.var run function dorklib:impl/do/target/projectiles/validate_type with storage do:io args
-execute if data storage do:io args.type if score #success dorklib.var matches 0 run return run function dorklib:exception {args:{message:"Invalid argument: Type, if specified, must be a valid entity type or a valid hash-prefixes entity type tag"}}
+execute if data storage do:io args.type if score #success dorklib.var matches 0 run return run function dorklib:exception {args:{message:"The \"type\" argument must be a valid entity type or a valid hash-prefixes entity type tag"}}
 
 # copy arguments
 data modify storage dorklib:main functions."do:target/projectiles" set from storage do:io args

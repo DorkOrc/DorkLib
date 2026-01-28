@@ -1,5 +1,5 @@
 # verify that the input is a compound
-execute unless data storage do:io input{} run return run function dorklib:exception {args:{message:"Input is not a compound type"}}
+execute unless data storage do:io input{} run return run function dorklib:exception {args:{message:"The input must be a compound"}}
 
 # make a temporary copy of the compound (this will be destroyed)
 data modify storage dorklib:main functions."do:compound/items".value set from storage do:io input

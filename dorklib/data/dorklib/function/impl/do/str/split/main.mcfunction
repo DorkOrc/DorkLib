@@ -1,20 +1,20 @@
 # verify that the input is a string
 data modify storage dorklib:main functions."do:str/split".string set string storage do:io input
 execute store success score #non_string dorklib.var run data modify storage dorklib:main functions."do:str/split".string set from storage do:io input
-execute if score #non_string dorklib.var matches 1 run return run function dorklib:exception {args:{message:"Input was not a string"}}
+execute if score #non_string dorklib.var matches 1 run return run function dorklib:exception {args:{message:"The input must be a string"}}
 
 # verify that the separator is a string
 data modify storage dorklib:main functions."do:str/split".separator set string storage do:io args.separator
 execute store success score #non_string dorklib.var run data modify storage dorklib:main functions."do:str/split".separator set from storage do:io args.separator
-execute if score #non_string dorklib.var matches 1 run return run function dorklib:exception {args:{message:"Separator was not a string"}}
+execute if score #non_string dorklib.var matches 1 run return run function dorklib:exception {args:{message:"The \"separator\" argument must be a string"}}
 
 # get max_splits
 scoreboard players set #max_splits dorklib.var 2147483647
 execute if data storage do:io args.max_splits store result score #max_splits dorklib.var run data get storage do:io args.max_splits
-execute if score #max_splits dorklib.var matches ..0 run return run function dorklib:exception {args:{message:"The maximum number of splits must be at least 1"}}
+execute if score #max_splits dorklib.var matches ..0 run return run function dorklib:exception {args:{message:"The \"max_splits\" argument must be at least 1"}}
 
 # fail if the separator is empty
-execute if data storage do:io args{separator:""} run return run function dorklib:exception {args:{message:"Separator was empty"}}
+execute if data storage do:io args{separator:""} run return run function dorklib:exception {args:{message:"The \"separator\" must not be empty"}}
 
 # quick return if the string is empty
 execute if data storage do:io {input:""} run return run data modify storage do:io output set value [""]

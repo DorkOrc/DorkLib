@@ -1,7 +1,7 @@
 # verify that the input is a string, and make a copy of the input string
 data modify storage dorklib:main functions."do:str/chars".temp_string set string storage do:io input
 execute store success score #non_string dorklib.var run data modify storage dorklib:main functions."do:str/chars".temp_string set from storage do:io input
-execute if score #non_string dorklib.var matches 1 run return run function dorklib:exception {args:{message:"Input was not a string"}}
+execute if score #non_string dorklib.var matches 1 run return run function dorklib:exception {args:{message:"The input must be a string"}}
 
 # check if the "function" argument is present
 execute store success score #run_function dorklib.var if data storage do:io args.function

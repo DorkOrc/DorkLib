@@ -1,14 +1,14 @@
 # resolve and validate id
 execute store success score #valid_id dorklib.var run function dorklib:util/decompose_namespaced_id {target:"storage do:io args.id"}
-execute if score #valid_id dorklib.var matches 0 run return run function dorklib:exception {args:{message:"Invalid ID"}}
-execute if data storage do:io args.id{dorklib:true} unless data storage do:io args{__dorklib__:true} run return run function dorklib:exception {args:{message:["The \"",{storage:"do:io",nbt:"args.id.resolved_id",interpret:true},"\" namespace is reserved for internal use only"]}}
+execute if score #valid_id dorklib.var matches 0 run return run function dorklib:exception {args:{message:"The \"id\" argument must be a valid namespaced ID"}}
+execute if data storage do:io args.id{dorklib:true} unless data storage do:io args{__dorklib__:true} run return run function dorklib:exception {args:{message:["The \"",{storage:"do:io",nbt:"args.id.namespace",interpret:true},"\" namespace is reserved for internal use only"]}}
 data modify storage dorklib:main functions."do:dynamic_function/modify/add_entry".id set from storage do:io args.id.resolved_id
 
 # Check existence
 data modify storage dorklib:main functions."do:dynamic_function/modify/add_entry".name set from storage do:io args.name
 scoreboard players set #valid_entry_name dorklib.var 0
 execute store success score #already_registered dorklib.var run function dorklib:impl/do/dynamic_function/modify/add_entry/check_existence with storage dorklib:main functions."do:dynamic_function/modify/add_entry"
-execute if score #valid_entry_name dorklib.var matches 0 run return run function dorklib:exception {args:{message:"Invalid entry name: May only contain a-z0-9._-"}}
+execute if score #valid_entry_name dorklib.var matches 0 run return run function dorklib:exception {args:{message:"Entry names must only contain a-z 0-9 . _ or -"}}
 execute if score #already_registered dorklib.var matches 0 run return fail
 
 # Check commands
