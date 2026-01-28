@@ -28,8 +28,8 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
 
   Resolves the text component. Uses the entity context of the executor. If no entity is executing, entity-dependent text components will become empty strings.
   > `(input: str|compound|list) -> str|compound`
-  - `storage do:io input` (*If inlined, use `args.text_component` instead) is a text component.
-  - `storage do:io args.text_component` (*Only if inlined*) is a text component. Overrides the `input`.
+  - `storage do:io input` (*If inlined, use `args.text_component` instead*) is a text component.
+  - `storage do:io args.text_component` (*Only if inlined*; *Optional*) is a text component. Overrides the `input`.
   </details>
 
   <details>
@@ -266,8 +266,8 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   <summary><h3>Remove Storage - <code>do:storage/remove</code></h3></summary>
 
   Deletes an entire storage file.
-  - `storage do:io input` (*If inlined, use `args.storage` instead) is a namespaced ID.
-  - `storage do:io args.storage` (*Only if inlined*) is a namespaced ID. Overrides the `input`.
+  - `storage do:io input` (*If inlined, use `args.storage` instead*) is a namespaced ID.
+  - `storage do:io args.storage` (*Only if inlined*; *Optional*) is a namespaced ID. Overrides the `input`.
   </details>
 </details>
 
@@ -355,7 +355,7 @@ These functions use a voxel traversal algorithm, so they are both very efficient
   Summons an entity which immediately mounts the executing entity, and then optionally runs a function.
   > `(input: str|None, id: str|None = None, nbt: compound|None = None, function: str|None = None) -> str`
   - `storage do:io input` (*If inlined, use `args.id` instead*) is an entity type ID.
-  - `storage do:io args.id` (*Only if inlined*) is an entity type ID. Overrides the `input`.
+  - `storage do:io args.id` (*Only if inlined*; *Optional*) is an entity type ID. Overrides the `input`.
   - `storage do:io args.nbt` (*Optional*) is an NBT compound of tags to summon the entity with. If specified, the entity is summoned with that data directly. If omitted, the entity is summoned with default randomness. `UUID` and `Pos` tags are ignored.
   - `storage do:io args.function` (*Optional*) is a function ID (without macro arguments) to run as the entity immediately after it mounts its vehicle. If omitted, no function is ran.
 
