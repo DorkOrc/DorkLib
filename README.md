@@ -137,6 +137,14 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   > `(input: str) -> str`
   - `storage do:io input` is a string.
   </details>
+
+  <details>
+  <summary><h3>Split Lines & Strip Whitespace - <code>do:str/split_and_strip_lines</code></h3></summary>
+
+  Splits the string at every newline character and strips all invisible space and ZWNJ characters from the beginning and end of the each line. Any leading or trailing empty lines will also be removed.
+  > `(input: str) -> str`
+  - `storage do:io input` is a string.
+  </details>
 </details>
 
 
