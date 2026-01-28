@@ -43,10 +43,18 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   <details>
   <summary><h3>Limit Length - <code>do:text/limit_length</code></h3></summary>
 
-  Discards any characters after the given character limit. The text component will be resolved and anything other than "text" components will be ignored. May split apart surrogate pairs.
+  Resolves the text component and discards any characters after the given limit. Anything other than "text" components will be ignored. May split apart surrogate pairs.
   > `(input: str|compound|list) -> str|compound`
   - `storage do:io input` is a text component.
   - `storage do:io args.length` is a non-negative integer.
+  </details>
+
+  <details>
+  <summary><h3>Is Non Empty - <code>do:text/is_non_empty</code></h3></summary>
+
+  Resolves the text component and returns 1 if this text component contains any visible text glyphs, or any translate, keybind, or object components. Otherwise, returns 0.
+  > `(input: str|compound|list) -> str|compound`
+  - `storage do:io input` is a text component.
   </details>
 </details>
 
