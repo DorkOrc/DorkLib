@@ -160,6 +160,15 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   - `storage do:io input` is a list.
   - `storage do:io args.value` is any value.
   </details>
+
+  <details>
+  <summary><h3>Limit Combined Length of Strings - <code>do:list/of_strings/limit_combined_length</code></h3></summary>
+
+  The lengths of the strings are added together until the sum reaches the given limit. If the limit is *exceeded* by a string, the string at the current index is sliced to fit into the limit (if the last character ends up as half of a surrogate pair, it gets removed). Remaining strings are discarded. If flattened, the resulting string will never be longer than the given limit.
+  > `(input: list[str]) -> list[str]`
+  - `storage do:io input` is a list.
+  - `storage do:io args.length` is a positive integer.
+  </details>
 </details>
 
 
