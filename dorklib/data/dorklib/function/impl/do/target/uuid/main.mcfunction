@@ -1,4 +1,4 @@
-execute unless data storage do:io args.function run return run function dorklib:exception {args:{message:"Exoected a \"function\" argument"}}
+execute unless data storage do:io args.function run return run function dorklib:exception {args:{message:"Expected a \"function\" argument"}}
 execute unless data storage do:io input[3] run return run function dorklib:exception {args:{message:"The input must be a valid UUID"}}
 execute if data storage do:io input[4] run return run function dorklib:exception {args:{message:"The input must be a valid UUID"}}
 

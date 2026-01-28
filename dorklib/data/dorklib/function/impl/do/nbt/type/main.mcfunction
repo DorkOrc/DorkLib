@@ -22,4 +22,4 @@ function dorklib:impl/do/nbt/type/check_whole_number with storage do:io {}
 execute if data storage do:io output run return 1
 
 # check for NaN or Infinity
-function dorklib:exception {args:{message:"Unrecognised data type. Most likely is NaN or Infinity"}}
+return run function dorklib:exception {args:{message:"Unrecognised data type. Most likely is NaN or Infinity"}}

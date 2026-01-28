@@ -6,7 +6,7 @@ data modify storage dorklib:main functions."do:dynamic_function/remove".id set f
 
 # Check existence
 execute store success score #already_registered dorklib.var run function dorklib:impl/do/dynamic_function/remove/check_existence with storage dorklib:main functions."do:dynamic_function/remove"
-execute if score #already_registered dorklib.var matches 0 run return run function dorklib:exception {args:{message:["A dynamic function with ID ",{storage:"dorklib:main",nbt:'functions."do:dynamic_function/remove".id',interpret:true}," is not registered"]}}
+execute if score #already_registered dorklib.var matches 0 run return run function dorklib:exception {args:{message:["A dynamic function with ID \"",{storage:"dorklib:main",nbt:'functions."do:dynamic_function/remove".id',interpret:true},"\" is not registered"]}}
 
 # unregister dynamic function
 function dorklib:impl/do/dynamic_function/remove/remove_from_registry with storage dorklib:main functions."do:dynamic_function/remove"

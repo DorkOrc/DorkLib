@@ -21,9 +21,19 @@ tellraw @a[tag=dorklib.admin] {\
 	],\
 	hover_event: {\
 		action: "show_text",\
-		value: {\
-			storage: "do:io",\
-			nbt: "exception"\
-		}\
+		value: [\
+			"• ",\
+			{\
+				storage: "do:io",\
+				nbt: "exception.function[]",\
+				interpret: true,\
+				separator: "\n• "\
+			},\
+			"\n",\
+			{\
+				storage: "do:io",\
+				nbt: "exception"\
+			}\
+		]\
 	}\
 }

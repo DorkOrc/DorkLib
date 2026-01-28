@@ -2,8 +2,8 @@
 
 scoreboard players set #valid_entry_name dorklib.var 1
 
-$execute unless data storage dorklib:dynamic_function dynamic_functions."$(id)" run return run function dorklib:exception {args:{message:["A dynamic function with ID $(id) is not registered"]}}
-$execute unless data storage dorklib:dynamic_function dynamic_functions."$(id)".indexes.name."$(name)" run return run function dorklib:exception {args:{message:["The $(id) dynamic function does not have an entry with that name"]}}
+$execute unless data storage dorklib:dynamic_function dynamic_functions."$(id)" run return run function dorklib:exception {args:{message:["A dynamic function with ID \"$(id)\" is not registered"]}}
+$execute unless data storage dorklib:dynamic_function dynamic_functions."$(id)".indexes.name."$(name)" run return run function dorklib:exception {args:{message:["The \"$(id)\" dynamic function does not have an entry with that name"]}}
 
 $data modify storage dorklib:main functions."do:dynamic_function/modify/remove_entry".index set from storage dorklib:dynamic_function dynamic_functions."$(id)".indexes.name."$(name)"
 $data modify storage dorklib:main functions."do:dynamic_function/modify/remove_entry".top_index set from storage dorklib:dynamic_function dynamic_functions."$(id)".entries[-1].index

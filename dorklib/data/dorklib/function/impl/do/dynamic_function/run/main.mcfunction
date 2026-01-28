@@ -6,6 +6,6 @@ data modify storage dorklib:main functions."do:dynamic_function/run".id set from
 
 # check existence & run
 execute store success score #already_registered dorklib.var run function dorklib:impl/do/dynamic_function/run/check_existence with storage dorklib:main functions."do:dynamic_function/run"
-execute if score #already_registered dorklib.var matches 0 run return run function dorklib:exception {args:{message:["A dynamic function with ID ",{storage:"dorklib:main",nbt:'functions."do:dynamic_function/run".id',interpret:true}," is not registered"]}}
+execute if score #already_registered dorklib.var matches 0 run return run function dorklib:exception {args:{message:["A dynamic function with ID \"",{storage:"dorklib:main",nbt:'functions."do:dynamic_function/run".id',interpret:true},"\" is not registered"]}}
 
 return 1
