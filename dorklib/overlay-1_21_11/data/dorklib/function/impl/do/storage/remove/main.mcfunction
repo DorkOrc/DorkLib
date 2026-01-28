@@ -4,11 +4,13 @@ data modify storage dorklib:main functions."do:storage/remove".storage_id set fr
 
 data modify storage dorklib:main functions."do:storage/remove".dorklib_namespace_check set string storage do:io input 0 8
 execute if data storage dorklib:main functions."do:storage/remove"{dorklib_namespace_check:"dorklib:"} run return run function dorklib:exception {args:{message:["The \"dorklib\" namespace is reserved for internal use only"]}}
-execute if data storage dorklib:main functions."do:storage/remove"{dorklib_namespace_check:"dorklib."} run return run function dorklib:exception {args:{message:["The \"",{storage:"dorklib:main",nbt:'functions."do:storage/remove".storage_id',interpret:true},"\" namespace is reserved for internal use only"]}}
+execute if data storage dorklib:main functions."do:storage/remove"{dorklib_namespace_check:"dorklib."} run function do:str/split. {args:{separator:":",max_splits:1}}
+execute if data storage dorklib:main functions."do:storage/remove"{dorklib_namespace_check:"dorklib."} run data modify storage dorklib:main functions."do:storage/remove".namespace set from storage do:io output[0]
+execute if data storage dorklib:main functions."do:storage/remove"{dorklib_namespace_check:"dorklib."} run return run function dorklib:exception {args:{message:["The \"",{storage:"dorklib:main",nbt:'functions."do:storage/remove".namespace',interpret:true},"\" namespace is reserved for internal use only"]}}
 
 scoreboard players set #total_root_keys dorklib.var -1
 function dorklib:impl/do/storage/remove/get_length with storage dorklib:main functions."do:storage/remove"
-execute if score #total_root_keys dorklib.var matches -1 run return run function dorklib:exception {args:{message:"The \"storage_id\" argument must be a valid namespaced ID"}}
+execute if score #total_root_keys dorklib.var matches -1 run return run function dorklib:exception {args:{message:"The \"storage\" argument must be a valid namespaced ID"}}
 
 execute if score #total_root_keys dorklib.var matches 1.. run function dorklib:impl/do/storage/remove/loop_until_empty
 
