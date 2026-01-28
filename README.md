@@ -234,7 +234,7 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   <details>
   <summary><h3>Dump NBT as SNBT - <code>do:nbt/write_snbt</code></h3></summary>
 
-  Converts any NBT object into a string containing its SNBT representation. This is different from `/data modify ... <op> string ...` as it wraps strings in quote marks and accepts compound, list, and array types. 
+  Converts any NBT object into a string containing its SNBT representation. This is different from `/data modify ... <op> string ...` as it wraps strings in quote marks and accepts compound, list, and array types. The exact formatting may differ between versions.
   > `(input: Any) -> str`
   - `storage do:io input` is any value.
   </details>
