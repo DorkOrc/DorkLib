@@ -1,4 +1,4 @@
-# Resolve text component using the current execution context. If no executing entity exists, a temporary marker will be used.
+# Resolves the text component. Uses the entity context of the executor. If no entity is executing, entity-dependent text components will become empty strings.
 # str|dict|list -> str|dict
 
 execute unless function dorklib:io/init run return fail
