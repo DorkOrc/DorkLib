@@ -121,6 +121,22 @@ Once a function is ran, the `input` and `args` fields will be deleted, leaving o
   > `(input: str) -> str`
   - `storage do:io input` is a string.
   </details>
+
+  <details>
+  <summary><h3>Strip Leading Whitespace - <code>do:str/strip_leading_whitespace</code></h3></summary>
+
+  Removes all invisible space and ZWNJ characters from the *beginning* of the string.
+  > `(input: str) -> str`
+  - `storage do:io input` is a string.
+  </details>
+
+  <details>
+  <summary><h3>Strip Trailing Whitespace - <code>do:str/strip_trailing_whitespace</code></h3></summary>
+
+  Removes all invisible space and ZWNJ characters from the *end* of the string.
+  > `(input: str) -> str`
+  - `storage do:io input` is a string.
+  </details>
 </details>
 
 
