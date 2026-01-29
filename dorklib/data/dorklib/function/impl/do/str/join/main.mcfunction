@@ -8,7 +8,8 @@ data modify storage do:io output set value ""
 execute unless data storage do:io input[0] run return 1
 
 # if the input only has a single element, return that element (stringified)
-execute unless data storage do:io input[1] run return run data modify storage do:io output set string storage do:io input[0]
+execute unless data storage do:io input[1] run data modify storage do:io output set string storage do:io input[0]
+execute unless data storage do:io input[1] run return 1
 
 # otherwise, iteratively concatenate strings
 data modify storage dorklib:main functions."do:str/join".substrings set from storage do:io input
