@@ -4,6 +4,9 @@ scoreboard objectives add dorklib.global dummy
 scoreboard objectives add dorklib.var dummy
 scoreboard objectives add dorklib.constant dummy
 
+execute if score #debug_mode dorklib.global matches 1 run say DorkLib DEBUG Mode
+scoreboard players reset #function_running dorklib.global
+
 data merge storage dorklib:meta {version:0,name:"DorkLib"}
 execute store result storage dorklib:meta version int 1 run scoreboard players set #version dorklib.global 0
 

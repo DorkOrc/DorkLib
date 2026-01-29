@@ -1,4 +1,5 @@
 # Delete an entire storage file.
+# -> None
 
 scoreboard players set #traverse_to dorklib.var 0
 data modify storage dorklib:main functions."do:storage/remove" set value {}
